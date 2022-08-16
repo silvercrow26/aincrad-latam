@@ -1,3 +1,6 @@
+body{
+  background-color: #191a19;
+}
 
 .navbar{
   flex-direction: row-reverse;

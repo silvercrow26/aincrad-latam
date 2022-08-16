@@ -8,10 +8,10 @@ import { ApiRust } from '../hooks/ApiRust';
 
 export const HomePage = () => {
 
-  const [imageRust, setImageRust] = useState('src/assets/rust.gif');
-  const [imageRustBanner, setImageRustBanner] = useState('src/assets/rustBanner.jpg');
-  const [imageUnturned, setimageUnturned] = useState('src/assets/unturned.gif');
-  const [imageUnturnedBanner, setimageUnturnedBanner] = useState('src/assets/unturnedBanner.jpg');
+  const [imageRust, setImageRust] = useState('./rust.gif');
+  const [imageRustBanner, setImageRustBanner] = useState('./rustBanner.jpg');
+  const [imageUnturned, setimageUnturned] = useState('./unturned.gif');
+  const [imageUnturnedBanner, setimageUnturnedBanner] = useState('./unturnedBanner.jpg');
 
   const { imagenRustOver, imagenRustOut, imagenUnturnedOver, imagenUnturnedOut, isHoveringRust, isHoveringUnturned } = imageFunction();
 
@@ -31,7 +31,7 @@ export const HomePage = () => {
 
   return (
     <>
-      <div className='container mt-5'>
+      <div className='container mt-5 text-light'>
         <h1 className='animate__animated animate__fadeInDown animate__delay-0s text-center'>Bienvenidos a Aincrad LATAM</h1>
         <hr className='animate__animated animate__fadeInDown animate__delay-1s' />
         <div className='row'>
@@ -48,8 +48,12 @@ export const HomePage = () => {
           </div>
         </div>
 
-        <hr className='animate__animated animate__fadeInDown animate__delay-2s' />
-        <h2 className='animate__animated animate__fadeInDown animate__delay-2s text-center mb-4'>Estado del servidor</h2>
+        <h2 className='mt-5 animate__animated animate__fadeInDown animate__delay-2s text-center mb-4'>Estado del servidor</h2>
+        <div className="d-flex justify-content-around">
+          <hr className="w-25 animate__animated animate__fadeIn animate__delay-2s"/>
+          <hr className="w-25 animate__animated animate__fadeIn animate__delay-2s"/>
+        </div>
+
         <div className='row'>
 
           <div className='col-md-6 col-sm-12 animate__animated animate__fadeIn animate__delay-2s'>
@@ -75,16 +79,25 @@ export const HomePage = () => {
 
         </div>
 
-        <hr className={fadeIn + ' animate__delay-3s' } />
         <h2 className='animate__animated animate__fadeInDown animate__delay-3s text-center'>Comunidad</h2>
+          <div className="d-flex justify-content-around">         
+            <hr className="w-25 animate__animated animate__fadeIn animate__delay-3s"/>         
+            <hr className="w-25 animate__animated animate__fadeIn animate__delay-3s"/>
+          </div>
         <h4  className='text-center animate__animated animate__fadeIn animate__delay-3s'>En progreso... 🧰⚒️</h4>
 
-        <hr className={fadeIn + ' animate__delay-4s'} />
-        <h2 className='animate__animated animate__fadeInDown animate__delay-4s text-center'>Staff</h2>
+        <h2 className='animate__animated animate__fadeInDown animate__delay-4s text-center mt-5'>Staff</h2>
+          <div className="d-flex justify-content-around">         
+            <hr className="w-25 animate__animated animate__fadeIn animate__delay-4s"/>         
+            <hr className="w-25 animate__animated animate__fadeIn animate__delay-4s"/>         
+          </div>
         <h4  className='text-center animate__animated animate__fadeIn animate__delay-4s'>En progreso... 🧰⚒️</h4>
 
-        <hr className={fadeIn + ' animate__delay-5s'} />
-        <h2 className='animate__animated animate__fadeInDown animate__delay-5s text-center'>Contacto</h2>
+        <h2 className='animate__animated animate__fadeInDown animate__delay-5s text-center mt-5'>Contacto</h2>
+          <div className="d-flex justify-content-around">
+            <hr className="w-25 animate__animated animate__fadeIn animate__delay-5s"/>
+            <hr className="w-25 animate__animated animate__fadeIn animate__delay-5s"/>
+          </div>
         <h4 className='text-center animate__animated animate__fadeIn animate__delay-5s'>En progreso... 🧰⚒️</h4>
 
       </div>
