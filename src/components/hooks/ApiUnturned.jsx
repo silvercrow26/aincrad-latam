@@ -8,7 +8,7 @@ export const ApiUnturned = () => {
     const URLunturned = "DH6lNdg5WncdwzSmAjB6f6CdE43yWEmiv1w"; 
     const url = `https://unturned-servers.net/api/?object=servers&element=detail&key=${URLunturned}`;
     
-    const [unturnedData, setUnturnedData] = useState(['']);
+    const [unturnedData, setUnturnedData] = useState([{}]);
 
     const getUnturnedApi = async() => {    
         const request = await fetch(url);
