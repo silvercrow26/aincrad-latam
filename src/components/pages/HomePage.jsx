@@ -26,9 +26,6 @@ export const HomePage = () => {
     getRustApi();
   }, []);
 
-  console.log(unturnedData);
-  console.log(rustData);
-
   return (
     <>
       <div className='container mt-5 text-light'>
