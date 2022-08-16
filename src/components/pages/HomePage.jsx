@@ -4,6 +4,7 @@ import '../../App.css';
 import { imageFunction } from '../helpers/ImagesFunction';
 import { Link } from 'react-router-dom';
 import { ApiUnturned } from '../hooks/ApiUnturned';
+import { ApiRust } from '../hooks/ApiRust';
 
 export const HomePage = () => {
 
@@ -12,16 +13,20 @@ export const HomePage = () => {
   const [imageUnturned, setimageUnturned] = useState('src/assets/unturned.gif');
   const [imageUnturnedBanner, setimageUnturnedBanner] = useState('src/assets/unturnedBanner.jpg');
 
-  const {imagenRustOver, imagenRustOut, imagenUnturnedOver, imagenUnturnedOut, isHoveringRust, isHoveringUnturned} = imageFunction();
+  const { imagenRustOver, imagenRustOut, imagenUnturnedOver, imagenUnturnedOut, isHoveringRust, isHoveringUnturned } = imageFunction();
 
-  const {unturnedData,setUnturnedData,getUnturnedApi} = ApiUnturned();
+  const { unturnedData, setUnturnedData, getUnturnedApi } = ApiUnturned();
+  const { rustData, setRustData, getRustApi } = ApiRust();
 
   // Actualiza la fc sin recargar la pagina.
   useEffect(() => {
     getUnturnedApi();
+    getRustApi();
   }, []);
-  
+
   console.log(unturnedData);
+  console.log(rustData);
+
   return (
     <>
       <div className='container mt-5'>
@@ -42,26 +47,37 @@ export const HomePage = () => {
         </div>
 
         <hr className='animate__animated animate__fadeInDown animate__delay-0.4s' />
-        <h1 className='animate__animated animate__fadeInDown animate__delay-0s text-center'>Estado del servidor</h1>
-          <div>
-
-            {unturnedData.map(({id,name,hostname,is_online,players}) => (
+        <h2 className='animate__animated animate__fadeInDown animate__delay-0s text-center mb-4'>Estado del servidor</h2>
+        <div className='row'>
+          <div className='col-md-6 col-sm-12'>
+            {unturnedData.map(({ id, name, hostname, is_online, players }) => (
               <div className="text-center" key={id}>
                 <p>{hostname}</p>
                 <p>El servidor se encuentra: {is_online === '1' ? (<p className="text-success">ONLINE</p>) : (<p className="text-danger">OFFLINE</p>)}</p>
                 <p>Jugadores: {players}</p>
-              </div>             
+              </div>
             ))}
-
           </div>
+
+          <div className='col-md-6 col-sm-12'>
+            {rustData.map(({ id, name, hostname, is_online, players }) => (
+              <div className="text-center" key={id}>
+                <p>{hostname}</p>
+                <p>El servidor se encuentra: {is_online === '1' ? (<p className="text-success">ONLINE</p>) : (<p className="text-danger">OFFLINE</p>)}</p>
+                <p>Jugadores: {players}</p>
+              </div>
+            ))}
+          </div>
+
+        </div>
         <hr className='animate__animated animate__fadeInDown animate__delay-0.4s' />
-        <h1 className='animate__animated animate__fadeInDown animate__delay-0s text-center'>Comunidad</h1>
+        <h2 className='animate__animated animate__fadeInDown animate__delay-0s text-center'>Comunidad</h2>
 
         <hr className='animate__animated animate__fadeInDown animate__delay-0.4s' />
-        <h1 className='animate__animated animate__fadeInDown animate__delay-0s text-center'>Staff</h1>
+        <h2 className='animate__animated animate__fadeInDown animate__delay-0s text-center'>Staff</h2>
 
         <hr className='animate__animated animate__fadeInDown animate__delay-0.4s' />
-        <h1 className='animate__animated animate__fadeInDown animate__delay-0s text-center'>Contacto</h1>
+        <h2 className='animate__animated animate__fadeInDown animate__delay-0s text-center'>Contacto</h2>
       </div>
     </>
   )
