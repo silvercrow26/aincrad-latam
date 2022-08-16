@@ -18,6 +18,8 @@ export const HomePage = () => {
   const { unturnedData, setUnturnedData, getUnturnedApi } = ApiUnturned();
   const { rustData, setRustData, getRustApi } = ApiRust();
 
+  const fadeIn = 'animate__animated animate__fadeInDown';
+
   // Actualiza la fc sin recargar la pagina.
   useEffect(() => {
     getUnturnedApi();
@@ -31,7 +33,7 @@ export const HomePage = () => {
     <>
       <div className='container mt-5'>
         <h1 className='animate__animated animate__fadeInDown animate__delay-0s text-center'>Bienvenidos a Aincrad LATAM</h1>
-        <hr className='animate__animated animate__fadeInDown animate__delay-0.4s' />
+        <hr className='animate__animated animate__fadeInDown animate__delay-1s' />
         <div className='row'>
           <div className='col contenedor zoom animate__animated animate__fadeIn animate__delay-1s'>
             <Link to='rust'>
@@ -46,20 +48,11 @@ export const HomePage = () => {
           </div>
         </div>
 
-        <hr className='animate__animated animate__fadeInDown animate__delay-0.4s' />
-        <h2 className='animate__animated animate__fadeInDown animate__delay-0s text-center mb-4'>Estado del servidor</h2>
+        <hr className='animate__animated animate__fadeInDown animate__delay-2s' />
+        <h2 className='animate__animated animate__fadeInDown animate__delay-2s text-center mb-4'>Estado del servidor</h2>
         <div className='row'>
-          <div className='col-md-6 col-sm-12'>
-            {unturnedData.map(({ id, name, hostname, is_online, players }) => (
-              <div className="text-center" key={id}>
-                <p>{hostname}</p>
-                <p>El servidor se encuentra: {is_online === '1' ? (<p className="text-success">ONLINE</p>) : (<p className="text-danger">OFFLINE</p>)}</p>
-                <p>Jugadores: {players}</p>
-              </div>
-            ))}
-          </div>
 
-          <div className='col-md-6 col-sm-12'>
+          <div className='col-md-6 col-sm-12 animate__animated animate__fadeIn animate__delay-2s'>
             {rustData.map(({ id, name, hostname, is_online, players }) => (
               <div className="text-center" key={id}>
                 <p>{hostname}</p>
@@ -69,17 +62,32 @@ export const HomePage = () => {
             ))}
           </div>
 
+          <div className='col-md-6 col-sm-12 animate__animated animate__fadeIn animate__delay-2s'>
+            {unturnedData.map(({ id, name, hostname, is_online, players }) => (
+              <div className="text-center" key={id}>
+                <p>{hostname}</p>
+                <p>El servidor se encuentra: {is_online === '1' ? (<p className="text-success">ONLINE</p>) : (<p className="text-danger">OFFLINE</p>)}</p>
+                <p>Jugadores: {players}</p>
+              </div>
+            ))}
+          </div>
+
+
         </div>
-        <hr className='animate__animated animate__fadeInDown animate__delay-0.4s' />
-        <h2 className='animate__animated animate__fadeInDown animate__delay-0s text-center'>Comunidad</h2>
 
-        <hr className='animate__animated animate__fadeInDown animate__delay-0.4s' />
-        <h2 className='animate__animated animate__fadeInDown animate__delay-0s text-center'>Staff</h2>
+        <hr className={fadeIn + ' animate__delay-3s' } />
+        <h2 className='animate__animated animate__fadeInDown animate__delay-3s text-center'>Comunidad</h2>
+        <h4  className='text-center animate__animated animate__fadeIn animate__delay-3s'>En progreso... 🧰⚒️</h4>
 
-        <hr className='animate__animated animate__fadeInDown animate__delay-0.4s' />
-        <h2 className='animate__animated animate__fadeInDown animate__delay-0s text-center'>Contacto</h2>
+        <hr className={fadeIn + ' animate__delay-4s'} />
+        <h2 className='animate__animated animate__fadeInDown animate__delay-4s text-center'>Staff</h2>
+        <h4  className='text-center animate__animated animate__fadeIn animate__delay-4s'>En progreso... 🧰⚒️</h4>
+
+        <hr className={fadeIn + ' animate__delay-5s'} />
+        <h2 className='animate__animated animate__fadeInDown animate__delay-5s text-center'>Contacto</h2>
+        <h4 className='text-center animate__animated animate__fadeIn animate__delay-5s'>En progreso... 🧰⚒️</h4>
+
       </div>
     </>
   )
-
 }
