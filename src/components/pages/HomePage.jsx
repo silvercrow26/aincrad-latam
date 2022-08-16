@@ -15,9 +15,9 @@ export const HomePage = () => {
 
   return (
     <>
-      <div className='container'>
-        <p className='h1 animate__animated animate__fadeInDown animate__delay-0s'>Bienvenidos a Aincrad LATAM</p>
-        <hr className='animate__animated animate__fadeInDown animate__delay-0.8s' />
+      <div className='container mt-5'>
+        <h1 className='animate__animated animate__fadeInDown animate__delay-0s text-center'>Bienvenidos a Aincrad LATAM</h1>
+        <hr className='animate__animated animate__fadeInDown animate__delay-0.4s' />
         <div className='row'>
           <div className='col contenedor zoom animate__animated animate__fadeIn animate__delay-1s'>
             <Link to='rust'>
@@ -31,6 +31,18 @@ export const HomePage = () => {
             </Link>
           </div>
         </div>
+
+        <hr className='animate__animated animate__fadeInDown animate__delay-0.4s' />
+        <h1 className='animate__animated animate__fadeInDown animate__delay-0s text-center'>Estado del servidor</h1>
+
+        <hr className='animate__animated animate__fadeInDown animate__delay-0.4s' />
+        <h1 className='animate__animated animate__fadeInDown animate__delay-0s text-center'>Comunidad</h1>
+
+        <hr className='animate__animated animate__fadeInDown animate__delay-0.4s' />
+        <h1 className='animate__animated animate__fadeInDown animate__delay-0s text-center'>Staff</h1>
+
+        <hr className='animate__animated animate__fadeInDown animate__delay-0.4s' />
+        <h1 className='animate__animated animate__fadeInDown animate__delay-0s text-center'>Contacto</h1>
       </div>
     </>
   )
