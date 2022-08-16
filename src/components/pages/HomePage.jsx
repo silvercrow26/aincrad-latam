@@ -1,8 +1,9 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import 'animate.css';
 import '../../App.css';
 import { imageFunction } from '../helpers/ImagesFunction';
 import { Link } from 'react-router-dom';
+import { ApiUnturned } from '../hooks/ApiUnturned';
 
 export const HomePage = () => {
 
@@ -13,6 +14,14 @@ export const HomePage = () => {
 
   const {imagenRustOver, imagenRustOut, imagenUnturnedOver, imagenUnturnedOut, isHoveringRust, isHoveringUnturned} = imageFunction();
 
+  const {unturnedData,setUnturnedData,getUnturnedApi} = ApiUnturned();
+
+  // Actualiza la fc sin recargar la pagina.
+  useEffect(() => {
+    getUnturnedApi();
+  }, []);
+  
+  console.log(unturnedData);
   return (
     <>
       <div className='container mt-5'>
@@ -34,7 +43,13 @@ export const HomePage = () => {
 
         <hr className='animate__animated animate__fadeInDown animate__delay-0.4s' />
         <h1 className='animate__animated animate__fadeInDown animate__delay-0s text-center'>Estado del servidor</h1>
+          <div>
 
+            {unturnedData ? unturnedData.map(data => {
+              <p>{data.is_online}</p>
+            }):(<p>cargando</p>)}
+
+          </div>
         <hr className='animate__animated animate__fadeInDown animate__delay-0.4s' />
         <h1 className='animate__animated animate__fadeInDown animate__delay-0s text-center'>Comunidad</h1>
 
