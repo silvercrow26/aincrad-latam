@@ -7,47 +7,40 @@ import { ImageRust } from './ImageRust';
 function App() {
 
   const [imageRust, setImageRust] = useState('public/rust.gif');
+  const [imageRustBanner, setImageRustBanner] = useState('public/rustBanner.jpg');
   const [imageUnturned, setimageUnturned] = useState('public/unturned.gif');
+  const [imageUnturnedBanner, setimageUnturnedBanner] = useState('public/unturnedBanner.jpg');
+  const [isHoveringRust, setIsHoveringRust] = useState(false);
+  const [isHoveringUnturned, setIsHoveringUnturned] = useState(false);
 
-
-  const onMouseOver = ({target}) => {
-
-    if(target.src == 'public/rust.gif') {
-      setImageRust('public/rustBanner.jpg');
-      target.className = 'img';
-    }
-
-    if(target.src == 'public/unturned.gif') {
-      setimageUnturned('public/unturnedBanner.jpg');
-      target.className = 'img';
-    }
-    console.log(target);
-    
-  }
-
-  const onMouseOut = (event) => {
-    if(event.target.src == 'public/rustBanner.jpg') {
-      setImageRust('public/rust.gif');
-    }
-
-    if(event.target.src == 'public/unturnedBanner.jpg') {
-      setimageUnturned('public/unturned.gif');
-    }
+  const imagenRustOver = () => {
+    setIsHoveringRust(true)
 
   }
+  const imagenRustOut = () => {
+    setIsHoveringRust(false)
+  }
+
+  const imagenUnturnedOver = () =>{
+    setIsHoveringUnturned(true);
+  }
   
-  
+  const imageUnturnedOut = () => {
+    setIsHoveringUnturned(false);
+  }
+
+
   return (
     <div className='container'>
       <p className='h1 animate__animated animate__fadeInDown animate__delay-0s'>Bienvenidos a Aincrad LATAM</p>
       <hr className='animate__animated animate__fadeInDown animate__delay-0.8s'/>
           <div className='row'>
             <div className='col contenedor zoom animate__animated animate__fadeIn animate__delay-1s'>
-              <img className='img' onMouseOut={onMouseOut} onMouseOver={onMouseOver} src={imageRust}></img>
+              <img className='img' onMouseOut={imagenRustOut} onMouseOver={imagenRustOver} src={isHoveringRust ? imageRustBanner : imageRust}></img>
             </div>
-
+ 
             <div className='col zoom animate__animated animate__fadeIn animate__delay-1s'>
-              <img className='img' onMouseOut={onMouseOut} onMouseOver={onMouseOver} src={imageUnturned}></img>
+              <img className='img' onMouseOut={imageUnturnedOut} onMouseOver={imagenUnturnedOver} src={isHoveringUnturned ? imageUnturnedBanner : imageUnturned }></img>
             </div>
           </div>
     </div>
