@@ -1,8 +1,9 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import 'animate.css';
 import '../../App.css';
 import { imageFunction } from '../helpers/ImagesFunction';
 import { Link } from 'react-router-dom';
+import { ApiUnturned } from '../hooks/ApiUnturned';
 
 export const HomePage = () => {
 
@@ -13,11 +14,19 @@ export const HomePage = () => {
 
   const {imagenRustOver, imagenRustOut, imagenUnturnedOver, imagenUnturnedOut, isHoveringRust, isHoveringUnturned} = imageFunction();
 
+  const {unturnedData,setUnturnedData,getUnturnedApi} = ApiUnturned();
+
+  // Actualiza la fc sin recargar la pagina.
+  useEffect(() => {
+    getUnturnedApi();
+  }, []);
+  
+  console.log(unturnedData);
   return (
     <>
-      <div className='container'>
-        <p className='h1 animate__animated animate__fadeInDown animate__delay-0s'>Bienvenidos a Aincrad LATAM</p>
-        <hr className='animate__animated animate__fadeInDown animate__delay-0.8s' />
+      <div className='container mt-5'>
+        <h1 className='animate__animated animate__fadeInDown animate__delay-0s text-center'>Bienvenidos a Aincrad LATAM</h1>
+        <hr className='animate__animated animate__fadeInDown animate__delay-0.4s' />
         <div className='row'>
           <div className='col contenedor zoom animate__animated animate__fadeIn animate__delay-1s'>
             <Link to='rust'>
@@ -31,6 +40,26 @@ export const HomePage = () => {
             </Link>
           </div>
         </div>
+
+        <hr className='animate__animated animate__fadeInDown animate__delay-0.4s' />
+        <h1 className='animate__animated animate__fadeInDown animate__delay-0s text-center'>Estado del servidor</h1>
+          <div>
+            {unturnedData.map(({hostname, is_online, players}) =>(
+              <div>
+                <p>{hostname}</p>
+                <p>Jugadores: {players}</p>
+            <p>El servidor se encuentra: {is_online === '1' ? ('ONLINE') : ('OFFLINE')}</p>
+              </div>
+            ))}
+          </div>
+        <hr className='animate__animated animate__fadeInDown animate__delay-0.4s' />
+        <h1 className='animate__animated animate__fadeInDown animate__delay-0s text-center'>Comunidad</h1>
+
+        <hr className='animate__animated animate__fadeInDown animate__delay-0.4s' />
+        <h1 className='animate__animated animate__fadeInDown animate__delay-0s text-center'>Staff</h1>
+
+        <hr className='animate__animated animate__fadeInDown animate__delay-0.4s' />
+        <h1 className='animate__animated animate__fadeInDown animate__delay-0s text-center'>Contacto</h1>
       </div>
     </>
   )
