@@ -45,9 +45,13 @@ export const HomePage = () => {
         <h1 className='animate__animated animate__fadeInDown animate__delay-0s text-center'>Estado del servidor</h1>
           <div>
 
-            {unturnedData ? unturnedData.map(data => {
-              <p>{data.is_online}</p>
-            }):(<p>cargando</p>)}
+            {unturnedData.map(({id,name,hostname,is_online,players}) => (
+              <div key={id}>
+                <p>{name}</p>
+                <p>{is_online}</p>
+                <p>{players}</p>
+              </div>             
+            ))}
 
           </div>
         <hr className='animate__animated animate__fadeInDown animate__delay-0.4s' />
