@@ -48,7 +48,7 @@ export const HomePage = () => {
             {unturnedData.map(({id,name,hostname,is_online,players}) => (
               <div className="text-center" key={id}>
                 <p>{hostname}</p>
-                <p>El servidor se encuentra: {is_online === '1' ? ('ONLINE') : ('OFFLINE')}</p>
+                <p>El servidor se encuentra: {is_online === '1' ? (<p className="text-success">ONLINE</p>) : (<p className="text-danger">OFFLINE</p>)}</p>
                 <p>Jugadores: {players}</p>
               </div>             
             ))}
