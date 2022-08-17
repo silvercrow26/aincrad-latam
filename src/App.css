@@ -51,6 +51,12 @@ video {
 
 }
 
+.card {
+  width: 10rem;
+  background: none;
+  border: none;
+}
+
 .navbar{
   flex-direction: row-reverse;
 }

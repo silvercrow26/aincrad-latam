@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 export const ApiRust = () => {
 
@@ -11,8 +11,7 @@ export const ApiRust = () => {
         const request = await fetch(url);
         const response = await request.json();
         setRustData([response]);
-    }
-
+    }  
 
   return {
     rustData,

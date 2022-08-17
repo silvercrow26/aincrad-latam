@@ -1,17 +1,17 @@
 import React, { useEffect, useState } from 'react'
 
-export const UnturnedStatusItem = ({ hostname, is_online, players, maxplayers, version }) => {
+export const ServerStatusGrid = ({ hostname, is_online, players, maxplayers, version }) => {
 
-  const [rustStatus, setRustStatus] = useState('')
-  const [rustClassStatus, setRustClassStatus] = useState('')
+  const [status, setStatus] = useState('')
+  const [classStatus, setClassStatus] = useState('')
 
   const serverStatus = () => {
     if (is_online === '1') {
-      setRustClassStatus('text-success');
-      setRustStatus('ONLINE');
+      setClassStatus('text-success');
+      setStatus('ONLINE');
     } else {
-      setRustClassStatus('text-danger')
-      setRustStatus('OFFLINE');
+      setClassStatus('text-danger')
+      setStatus('OFFLINE');
     }
   }
 
@@ -31,7 +31,7 @@ export const UnturnedStatusItem = ({ hostname, is_online, players, maxplayers, v
 
           <tr>
             <td className='px-2'>Estado del servidor: </td>
-            <td className={rustClassStatus}> {rustStatus}</td>      
+            <td className={classStatus}> {status}</td>      
           </tr>
 
           <tr>
@@ -41,6 +41,7 @@ export const UnturnedStatusItem = ({ hostname, is_online, players, maxplayers, v
           <tr>
             <td colSpan={2}>Version: {version}</td>
           </tr>
+          
 
         </tbody>
       </table>
