@@ -1,5 +1,54 @@
+
 body{
-  background-color: #191a19;
+  padding: 0;
+  margin:0;
+  height: 100%;
+  background-color: black !important;
+}
+
+
+html::-webkit-scrollbar{
+
+  background-color: #202225;
+  width: 15px;
+}
+
+html::-webkit-scrollbar-thumb{
+  
+  background-color: #2e3338;
+
+}
+
+video {
+  transform: translate(-50% -50%);
+  object-fit: cover;
+  left: 0;
+  top: 0;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  filter: opacity(30%);
+}
+
+.content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+  
+  z-index: 2;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9);
+
 }
 
 .navbar{
@@ -30,3 +79,11 @@ body{
     object-position: center center;
 }
 
+td {
+  padding: 0px !important;
+  padding-bottom: 1rem !important;
+}
+
+.tdstatus{
+  padding-right: 20px !important;
+}

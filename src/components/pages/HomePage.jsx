@@ -5,6 +5,9 @@ import { imageFunction } from '../helpers/ImagesFunction';
 import { Link } from 'react-router-dom';
 import { ApiUnturned } from '../hooks/ApiUnturned';
 import { ApiRust } from '../hooks/ApiRust';
+import { UnturnedStatusItem } from '../UnturnedStatusItem';
+import { RustStatusItem } from '../RustStatusItem';
+// import {bgimage} from './background.mp4'
 
 export const HomePage = () => {
 
@@ -26,10 +29,18 @@ export const HomePage = () => {
     getRustApi();
   }, []);
 
+  console.log(rustData);
   return (
     <>
-      <div className='container mt-5 text-light'>
+      
+        <div className='fondo'>
+          <video className='' autoPlay loop muted>
+            <source src='./background.mp4' type='video/mp4'></source>    
+          </video>
+        
+      <div className='container content mt-5 text-light'>
         <h1 className='animate__animated animate__fadeInDown animate__delay-0s text-center'>Bienvenidos a Aincrad LATAM</h1>
+
         <hr className='animate__animated animate__fadeInDown animate__delay-1s' />
         <div className='row'>
           <div className='col contenedor zoom animate__animated animate__fadeIn animate__delay-1s'>
@@ -47,55 +58,65 @@ export const HomePage = () => {
 
         <h2 className='mt-5 animate__animated animate__fadeInDown animate__delay-2s text-center mb-4'>Estado del servidor</h2>
         <div className="d-flex justify-content-around">
-          <hr className="w-25 animate__animated animate__fadeIn animate__delay-2s"/>
-          <hr className="w-25 animate__animated animate__fadeIn animate__delay-2s"/>
+          <hr className="w-25 animate__animated animate__fadeIn animate__delay-2s" />
+          <hr className="w-25 animate__animated animate__fadeIn animate__delay-2s" />
         </div>
 
         <div className='row'>
 
-          <div className='col-md-6 col-sm-12 animate__animated animate__fadeIn animate__delay-2s'>
-            {rustData.map(({ id, name, hostname, is_online, players }) => (
-              <div className="text-center" key={id}>
-                <p>{hostname}</p>
-                <p>El servidor se encuentra: {is_online === '1' ? (<p className="text-success">ONLINE</p>) : (<p className="text-danger">OFFLINE</p>)}</p>
-                <p>Jugadores: {players}</p>
-              </div>
+          <div className='col-md-6 d-flex justify-content-center col-sm-12 animate__animated animate__fadeIn animate__delay-2s'>
+            {rustData.map((data) => (
+              <RustStatusItem key={data.id + data.hostname}
+                {...data}
+              />
             ))}
           </div>
 
-          <div className='col-md-6 col-sm-12 animate__animated animate__fadeIn animate__delay-2s'>
-            {unturnedData.map(({ id, name, hostname, is_online, players }) => (
-              <div className="text-center" key={id}>
-                <p>{hostname}</p>
-                <p>El servidor se encuentra: {is_online === '1' ? (<p className="text-success">ONLINE</p>) : (<p className="text-danger">OFFLINE</p>)}</p>
-                <p>Jugadores: {players}</p>
-              </div>
+          <div className='col-md-6 d-flex justify-content-center col-sm-12 animate__animated animate__fadeIn animate__delay-2s'>
+            {unturnedData.map((data) => (
+              <UnturnedStatusItem key={data.hostname + data.id}
+                {...data} />
             ))}
           </div>
-
 
         </div>
 
         <h2 className='animate__animated animate__fadeInDown animate__delay-3s text-center'>Comunidad</h2>
-          <div className="d-flex justify-content-around">         
-            <hr className="w-25 animate__animated animate__fadeIn animate__delay-3s"/>         
-            <hr className="w-25 animate__animated animate__fadeIn animate__delay-3s"/>
+        <div className="d-flex justify-content-around mb-3">
+          <hr className="w-25 animate__animated animate__fadeIn animate__delay-3s" />
+          <hr className="w-25 animate__animated animate__fadeIn animate__delay-3s" />
+        </div>
+
+        <div className='row'>
+          <div className='col-md-4 col-sm-12 d-flex justify-content-center'>
+            <iframe className="" src="https://discord.com/widget?id=360624851519537155&theme=dark" width="350" height="500" allowtransparency="true" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts">
+            </iframe>
           </div>
-        <h4  className='text-center animate__animated animate__fadeIn animate__delay-3s'>En progreso... 🧰⚒️</h4>
+          <div className='col-md-8 col-sm-12'>
+              <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Blanditiis, dolores ducimus. Velit id laborum porro libero suscipit, assumenda vel placeat dolor veniam neque culpa animi, impedit ut. Tempore, corrupti numquam.</p>
+          </div>
+        </div>
+
+
+
+
+        <h4 className='text-center animate__animated animate__fadeIn animate__delay-3s'>En progreso... 🧰⚒️</h4>
 
         <h2 className='animate__animated animate__fadeInDown animate__delay-4s text-center mt-5'>Staff</h2>
-          <div className="d-flex justify-content-around">         
-            <hr className="w-25 animate__animated animate__fadeIn animate__delay-4s"/>         
-            <hr className="w-25 animate__animated animate__fadeIn animate__delay-4s"/>         
-          </div>
-        <h4  className='text-center animate__animated animate__fadeIn animate__delay-4s'>En progreso... 🧰⚒️</h4>
+        <div className="d-flex justify-content-around">
+          <hr className="w-25 animate__animated animate__fadeIn animate__delay-4s" />
+          <hr className="w-25 animate__animated animate__fadeIn animate__delay-4s" />
+        </div>
+        <h4 className='text-center animate__animated animate__fadeIn animate__delay-4s'>En progreso... 🧰⚒️</h4>
 
         <h2 className='animate__animated animate__fadeInDown animate__delay-5s text-center mt-5'>Contacto</h2>
-          <div className="d-flex justify-content-around">
-            <hr className="w-25 animate__animated animate__fadeIn animate__delay-5s"/>
-            <hr className="w-25 animate__animated animate__fadeIn animate__delay-5s"/>
-          </div>
+        <div className="d-flex justify-content-around">
+          <hr className="w-25 animate__animated animate__fadeIn animate__delay-5s" />
+          <hr className="w-25 animate__animated animate__fadeIn animate__delay-5s" />
+        </div>
         <h4 className='text-center animate__animated animate__fadeIn animate__delay-5s'>En progreso... 🧰⚒️</h4>
+
+      </div>
 
       </div>
     </>
