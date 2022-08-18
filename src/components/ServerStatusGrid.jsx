@@ -1,9 +1,15 @@
+import { faHeart } from '@fortawesome/free-regular-svg-icons';
+import { faSearch } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom';
 
-export const ServerStatusGrid = ({ hostname, is_online, players, maxplayers, version }) => {
+export const ServerStatusGrid = ({ id, hostname, is_online, players, maxplayers, version }) => {
 
   const [status, setStatus] = useState('')
   const [classStatus, setClassStatus] = useState('')
+
+
 
   const serverStatus = () => {
     if (is_online === '1') {
@@ -15,10 +21,13 @@ export const ServerStatusGrid = ({ hostname, is_online, players, maxplayers, ver
     }
   }
 
+  const redirect = (id) => {
+
+  }
+
   useEffect(() => {
     serverStatus();
   }, []);
-
 
   return (
     <div>
@@ -31,7 +40,7 @@ export const ServerStatusGrid = ({ hostname, is_online, players, maxplayers, ver
 
           <tr>
             <td className='px-2'>Estado del servidor: </td>
-            <td className={classStatus}> {status}</td>      
+            <td className={classStatus}> {status}</td>
           </tr>
 
           <tr>
@@ -41,7 +50,30 @@ export const ServerStatusGrid = ({ hostname, is_online, players, maxplayers, ver
           <tr>
             <td colSpan={2}>Version: {version}</td>
           </tr>
-          
+          {
+            id === '167780' ? (
+              <tr>
+                <td colSpan={2}>
+                  <button className='btn btn-outline-success'>
+                    <a target='_blank' className='text-decoration-none text-light' href='https://rust-servers.net/server/167780/'>
+                    Vota aquí <br/>
+                    ❤️
+                    </a>
+                  </button>
+                </td>
+              </tr>
+
+            ):(<tr>
+              <td colSpan={2}>
+                <button className='btn btn-outline-success'>
+                <a target='_blank' className='text-decoration-none text-light' href='https://unturned-servers.net/server/295411/#.Yv2-0g-xIPR.link'>
+                  Vota aquí <br/> 
+                  ❤️
+                </a>     
+                </button>
+              </td>
+            </tr>)
+          }
 
         </tbody>
       </table>

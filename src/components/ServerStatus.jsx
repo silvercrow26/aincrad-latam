@@ -36,6 +36,7 @@ export const ServerStatus = () => {
                     ))}
                 </div>
 
+
                 <div className="col-md-6 d-flex justify-content-center col-sm-12 animate__animated animate__fadeIn animate__delay-2s">
                     {unturnedData.map((data) => (
                         <ServerStatusGrid key={data.hostname + data.id} {...data} />
