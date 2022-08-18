@@ -15,8 +15,8 @@ export const HomeRouter = () => {
             <Route path='/' element={<HomePage />} />
             <Route path='rust' element={<RustPage />} />
             <Route path='unturned' element={<UnturnedPage/>}/>
-
-            <Route path='*' element={<ErrorPage />} />
+            
+            {/* <Route path='*' element={<ErrorPage />} /> */}
         </Routes>
     </>
   )
