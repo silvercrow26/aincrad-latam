@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@emailjs/browser": "^3.6.2",
     "@fortawesome/fontawesome-svg-core": "^6.1.2",
     "@fortawesome/free-regular-svg-icons": "^6.1.2",
     "@fortawesome/free-solid-svg-icons": "^6.1.2",
@@ -16,7 +17,8 @@
     "animate.css": "^4.1.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-router-dom": "6"
+    "react-router-dom": "6",
+    "sweetalert2": "^11.4.28"
   },
   "devDependencies": {
     "@types/react": "^18.0.17",
