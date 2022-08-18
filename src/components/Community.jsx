@@ -11,7 +11,7 @@ export const Community = () => {
                 <hr className="w-25 animate__animated animate__fadeIn animate__delay-3s" />
             </div>
             <div className="row animate__animated animate__fadeIn animate__delay-3s">
-                <div className="col-md-4 col-sm-12 d-flex justify-content-center">
+                <div className="col-md-3 col-sm-12 d-flex justify-content-center">
                     <iframe
                         className=""
                         src="https://discord.com/widget?id=360624851519537155&theme=dark"
@@ -21,10 +21,11 @@ export const Community = () => {
                         sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
                     ></iframe>
                 </div>
-                <div className="col-md-8 col-sm-12">
-                    <p>¡Bienvenidos a la nueva web de Aincrad LATAM!</p>
-
+                <div className="col-md-8 col-sm-12 mx-4 mt-2">
+                    <b>¡Bienvenidos a la nueva web de Aincrad LATAM!</b>
+                   
                     <p>
+                        
                         Para la existencia de una comunidad sana debemos colaborar y
                         mantener las normas del servidor.
                     </p>
