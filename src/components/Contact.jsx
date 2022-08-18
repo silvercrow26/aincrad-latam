@@ -36,7 +36,7 @@ export const Contact = () => {
 
   return (
     <>
-      <h2 className="animate__animated animate__fadeInDown animate__delay-5s text-center mt-5">
+      <h2 className="animate__animated animate__fadeInDown animate__delay-5s text-center mt-5" id="#contacto">
         Contacto
       </h2>
       <div className="d-flex justify-content-around">
