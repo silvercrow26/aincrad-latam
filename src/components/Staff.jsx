@@ -18,7 +18,7 @@ export const Staff = () => {
                 <h5 className="card-title">Silvercrow</h5>
                 <a className="card-text text-light text-decoration-none" target="_blank" href="https://www.instagram.com/frxstmourne/" >@frxstmourne</a><br />
                 <span className="text-danger">Owner</span><br />
-                <span className="">Web Developer</span>
+                <b className="">Web Developer</b>
               </div>
             </div>
 
@@ -28,7 +28,7 @@ export const Staff = () => {
                 <h5 className="card-title">DEFEND</h5>
                 <a className="card-text text-light text-decoration-none" target="_blank" href="https://www.instagram.com/z4myk/" >@z4myk</a><br />
                 <span className="text-danger">Co-Owner</span><br />
-                <span className="">Web Developer</span>
+                <b className="">Web Developer</b>
               </div>
             </div>
 
