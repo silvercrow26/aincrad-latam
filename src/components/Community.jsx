@@ -14,7 +14,7 @@ export const Community = () => {
                 <div className="col-md-3 col-sm-12 d-flex justify-content-center">
                     <iframe
                         className=""
-                        src="https://discord.com/widget?id=360624851519537155&theme=dark"
+                        src="https://discord.com/widget?id=1008984561461510164&theme=dark"
                         width="350"
                         height="500"
                         allowtransparency="true"
