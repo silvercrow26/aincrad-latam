@@ -45,7 +45,7 @@ export const Contact = () => {
       </div>
       <form onSubmit={handleSubmit}>
         <input
-          className="form-control mb-4 inputForm shadow-none text-light "
+          className="form-control mb-4 inputForm shadow-none text-light row animate__animated animate__fadeIn animate__delay-5s"
           type="text"
           placeholder="Ingrese su nombre"
           name="name"
@@ -53,7 +53,7 @@ export const Contact = () => {
           required
         />
         <input
-          className="form-control mb-4 inputForm shadow-none text-light"
+          className="form-control mb-4 inputForm shadow-none text-light row animate__animated animate__fadeIn animate__delay-5s"
           type="email"
           placeholder="Ingrese su email"
           onChange={(e) => setEmail(e.target.value) }
@@ -63,7 +63,7 @@ export const Contact = () => {
           required
         />
         <textarea
-          className="form-control mb-4 inputForm shadow-none text-light"
+          className="form-control mb-4 inputForm shadow-none text-light row animate__animated animate__fadeIn animate__delay-5s"
           type="text"
           placeholder="Ingrese su mensaje"
           rows="4"
