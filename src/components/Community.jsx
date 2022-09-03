@@ -1,3 +1,4 @@
+import WidgetBot from '@widgetbot/react-embed'
 import React from 'react'
 
 export const Community = () => {
@@ -12,14 +13,19 @@ export const Community = () => {
             </div>
             <div className="row animate__animated animate__fadeIn animate__delay-3s">
                 <div className="col-md-3 col-sm-12 d-flex justify-content-center">
-                    <iframe
+                    {/* <iframe
                         className=""
                         src="https://discord.com/widget?id=1008984561461510164&theme=dark"
                         width="350"
                         height="500"
                         allowtransparency="true"
                         sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
-                    ></iframe>
+                    ></iframe> */}
+
+                    <WidgetBot
+                        server="1014294166966112317"
+                        channel="1014294167645605913"
+                    />
                 </div>
                 <div className="col-md-8 col-sm-12 mx-4 mt-2">
                     <b>¡Bienvenidos a la nueva web de Aincrad LATAM!</b>
