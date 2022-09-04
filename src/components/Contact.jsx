@@ -43,6 +43,7 @@ export const Contact = () => {
         <hr className="w-25 animate__animated animate__fadeIn animate__delay-5s" />
         <hr className="w-25 animate__animated animate__fadeIn animate__delay-5s" />
       </div>
+
       <form onSubmit={handleSubmit}>
         <input
           className="form-control mb-4 inputForm shadow-none text-light row animate__animated animate__fadeIn animate__delay-5s"
@@ -76,9 +77,9 @@ export const Contact = () => {
         {error ? (<div class="alert alert-danger text-center" role="alert">
   Porfavor ingrese los datos correctamente
 </div>) : null}
-        <button className="btn btn-success w-100 mb-5">Enviar</button>
+        <button className="btn btn-success w-100 mb-5 animate__animated animate__fadeIn animate__delay-5s">Enviar</button>
       </form>
-      <p className="text-center mt-2">Aincrad LATAM Todos los derechos reservados © 2022</p>
+      <p className="text-center mt-2 animate__animated animate__fadeIn animate__delay-5s">Aincrad LATAM Todos los derechos reservados © 2022</p>
     </>
   );
 };

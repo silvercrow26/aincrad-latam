@@ -20,7 +20,7 @@ export const ImagenHomeItem = () => {
     
     return (
         <div className="row mt-4">
-            <div className="col contenedor zoom animate__animated animate__fadeIn animate__delay-1s">
+            <div className="col mb-4 contenedor zoom animate__animated animate__fadeIn animate__delay-1s">
                 <Link to="rust">
                     <img
                         role="button"
@@ -32,7 +32,7 @@ export const ImagenHomeItem = () => {
                 </Link>
             </div>
 
-            <div className="col zoom animate__animated animate__fadeIn animate__delay-1s">
+            <div className="col mb-4 zoom animate__animated animate__fadeIn animate__delay-1s">
                 <Link to="unturned">
                     <img
                         role="button"
