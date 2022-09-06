@@ -6,6 +6,7 @@ import { ServerStatus } from "../ServerStatus";
 import { Community } from "../Community";
 import { Staff } from "../Staff";
 import { Contact } from "../Contact";
+import { Donate } from "../Donate";
 
 
 export const HomePage = () => {
@@ -31,6 +32,8 @@ export const HomePage = () => {
           <Community />
 
           <Staff />
+
+          <Donate />
 
           <Contact />
         

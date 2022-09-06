@@ -18,8 +18,8 @@ export const Navbar = () => {
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link text-light efectoLista" to="rust">
-                  Rust
+                <Link className="nav-link text-light efectoLista" to="veloren">
+                  Veloren
                 </Link>
               </li>
               <li className="nav-item">
@@ -28,11 +28,11 @@ export const Navbar = () => {
                 </Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link text-light efectoLista" href="#">
-                  Contacto
+                <a className="nav-link text-light efectoListaDonate text-warning" href="#donate">
+                  Donaciones❤️
                 </a>
               </li>
-      </ul>
+      </ul>    
     </div>
   </div>
 </nav>

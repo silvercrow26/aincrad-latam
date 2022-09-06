@@ -45,6 +45,7 @@ export const Contact = () => {
       </div>
 
       <form onSubmit={handleSubmit}>
+        <label className="label-control mb-2">Nombre</label> <span className="text-danger">*</span>
         <input
           className="form-control mb-4 inputForm shadow-none text-light row animate__animated animate__fadeIn animate__delay-5s"
           type="text"
@@ -53,6 +54,7 @@ export const Contact = () => {
           autoComplete='off'
           required
         />
+        <label className="label-control mb-2">Email</label> <span className="text-danger">*</span>
         <input
           className="form-control mb-4 inputForm shadow-none text-light row animate__animated animate__fadeIn animate__delay-5s"
           type="email"
@@ -63,6 +65,7 @@ export const Contact = () => {
           autoComplete='off'
           required
         />
+        <label className="label-control mb-2">Mensaje</label> <span className="text-danger">*</span>
         <textarea
           className="form-control mb-4 inputForm shadow-none text-light row animate__animated animate__fadeIn animate__delay-5s"
           type="text"
