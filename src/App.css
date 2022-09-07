@@ -3,7 +3,7 @@ body {
   margin: 0;
   height: 100%;
   background-color: black !important;
-  margin-top: 66px;
+  margin-top: 74px;
 }
 
 
@@ -205,6 +205,11 @@ form {
 .mx-4 {
   margin-right: 1.5rem !important;
   margin-left: 0rem !important;
+}
+
+.logoAincrad{
+  width: 50px;
+  border-radius: 200px;
 }
 
 @media (max-width: 767px ) {

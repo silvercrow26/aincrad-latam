@@ -12,6 +12,7 @@ import { Carousel } from "../Carousel";
 
 export const HomePage = () => {
 
+  const [aincradLogo, setAincradLogo] = useState("./aincradlogo.png")
 
   return (
     <>
@@ -22,9 +23,13 @@ export const HomePage = () => {
 
         <Carousel />
         <div className="container content mt-5 text-light">
-          <h1 className="animate__animated animate__fadeInDown animate__delay-0s text-center text-white">
+          <div className="d-flex justify-content-center" >
+        <img src={aincradLogo} alt="Aincrad logo" className=" w-25 animate__animated animate__fadeInDown animate__delay-1s" /> 
+
+          </div>
+        {/* <h1 className="animate__animated animate__fadeInDown animate__delay-0s text-center text-white">
             Aincrad LATAM
-          </h1>
+          </h1> */}
           {/* <hr className="animate__animated animate__fadeInDown animate__delay-1s mt-5" /> */}
 
 

@@ -1,12 +1,14 @@
-import React from "react";
+import React, {useState} from "react";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 export const Navbar = () => {
+
+   const [aincradLogo, setAincradLogo] = useState("./aincradlogo.png")
   return (
     <>
 <nav className="navbar navbar-expand-lg bg-dark fixed-top bgNavbar text-light mb-5 ">
   <div className="container-fluid ">
-    <a className="navbar-brand text-light efectoLista" href="#" id="inicio" >Aincrad LATAM</a>
+    <a className="navbar-brand text-light" href="#" id="inicio" ><img src={aincradLogo} className="logoAincrad" /> </a>
     <button className="navbar-toggler collapsed buttonNav text-light " type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span className="navbar-toggler-icon text-light mt-2">🢃</span> 
     </button>
