@@ -3,7 +3,7 @@ import React from 'react'
 
 export const Community = () => {
     return (
-        <>
+        <div className="mb-5">
             <h2 className="animate__animated animate__fadeInDown animate__delay-3s text-center mt-5">
                 Comunidad
             </h2>
@@ -70,6 +70,6 @@ export const Community = () => {
             <div className='text-center mt-3 mb-2 animate__animated animate__fadeIn animate__delay-3s'>
                 <p className='community-end'>Durante los próximos meses estaremos trabajando en mejoras tanto esteticas como funcionales dentro del servidor y la web. ¡Esperamos que sean de su agrado! ❤️</p>
             </div>
-        </>
+        </div>
     )
 }

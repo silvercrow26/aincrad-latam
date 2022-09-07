@@ -24,7 +24,7 @@ export const ImagenHomeItem = () => {
                 <Link to="rust">
                     <img
                         role="button"
-                        className="img"
+                        className="img w-75 mx-5"
                         onMouseOut={imagenRustOut}
                         onMouseOver={imagenRustOver}
                         src={isHoveringRust ? imageRustBanner : imageRust}
@@ -36,7 +36,7 @@ export const ImagenHomeItem = () => {
                 <Link to="unturned">
                     <img
                         role="button"
-                        className="img"
+                        className="img w-75 mx-5"
                         onMouseOut={imagenUnturnedOut}
                         onMouseOver={imagenUnturnedOver}
                         src={isHoveringUnturned ? imageUnturnedBanner : imageUnturned}

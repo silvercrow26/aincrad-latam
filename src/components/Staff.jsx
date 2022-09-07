@@ -2,8 +2,8 @@ import React from 'react'
 
 export const Staff = () => {
   return (
-    <>
-        <h2 className="animate__animated animate__fadeInDown animate__delay-4s text-center mt-5">
+    <div className="mb-5">
+        <h2 className="animate__animated animate__fadeInDown animate__delay-4s text-center mt-5 ">
             Staff
           </h2>
           <div className="d-flex justify-content-around mb-4">
@@ -33,6 +33,6 @@ export const Staff = () => {
             </div>
 
           </div>
-    </>
+    </div>
   )
 }

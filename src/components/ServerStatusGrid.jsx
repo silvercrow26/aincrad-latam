@@ -10,7 +10,7 @@ export const ServerStatusGrid = ({ id, hostname, is_online, players, maxplayers,
   const [classStatus, setClassStatus] = useState('')
 
 
-
+ 
   const serverStatus = () => {
     if (is_online === '1') {
       setClassStatus('text-success');
@@ -32,6 +32,7 @@ export const ServerStatusGrid = ({ id, hostname, is_online, players, maxplayers,
   return (
     <div>
       <table className="table table-borderless text-light text-center mt-3">
+      <b className="text-success">Unturned</b>
         <tbody>
 
           <tr>
@@ -39,8 +40,7 @@ export const ServerStatusGrid = ({ id, hostname, is_online, players, maxplayers,
           </tr>
 
           <tr>
-            <td className='px-2'>Estado del servidor: </td>
-            <td className={classStatus}> {status}</td>
+            <td className='px-2'>Estado del servidor: <span className={classStatus}>{status}</span> </td>
           </tr>
 
           <tr>
@@ -57,7 +57,7 @@ export const ServerStatusGrid = ({ id, hostname, is_online, players, maxplayers,
                   <button className='btn btn-outline-success'>
                     <a target='_blank' className='text-decoration-none text-light' href='https://rust-servers.net/server/167780/'>
                     Vota aquí <br/>
-                    ❤️
+                    ❤️ 
                     </a>
                   </button>
                 </td>
@@ -72,7 +72,7 @@ export const ServerStatusGrid = ({ id, hostname, is_online, players, maxplayers,
                 </a>     
                 </button>
               </td>
-            </tr>)
+            </tr>) 
           }
 
         </tbody>

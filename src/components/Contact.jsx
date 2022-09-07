@@ -35,7 +35,7 @@ export const Contact = () => {
 };
 
   return (
-    <>
+    <div className="mb-5">
       <h2 className="animate__animated animate__fadeInDown animate__delay-5s text-center mt-5" id="#contacto">
         Contacto
       </h2>
@@ -83,7 +83,7 @@ export const Contact = () => {
         <button className="btn btn-success w-100 mb-5 animate__animated animate__fadeIn animate__delay-5s">Enviar</button>
       </form>
       <p className="text-center mt-2 animate__animated animate__fadeIn animate__delay-5s">Aincrad LATAM Todos los derechos reservados © 2022</p>
-    </>
+    </div>
   );
 };
  

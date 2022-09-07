@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 export const Navbar = () => {
   return (
     <>
-<nav className="navbar navbar-expand-lg bg-dark fixed-top bgNavbar text-light mb-5">
+<nav className="navbar navbar-expand-lg bg-dark fixed-top bgNavbar text-light mb-5 ">
   <div className="container-fluid ">
     <a className="navbar-brand text-light efectoLista" href="#" id="inicio" >Aincrad LATAM</a>
     <button className="navbar-toggler collapsed buttonNav text-light " type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
