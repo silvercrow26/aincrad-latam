@@ -5,7 +5,7 @@ export const Carousel = () => {
     const [veloren, setVeloren] = useState("./veloren01.png");
     const [veloren2, setVeloren2] = useState("./veloren02.png");
     return (
-        <div id="carouselExampleIndicators" className="carousel slide animate__animated animate__fadeInDown animate__delay-1s  " data-bs-ride="true">
+        <div id="carouselExampleIndicators" className="carousel slide animate__animated animate__fadeInDown animate__delay-1s " data-bs-ride="true">
   <div className="carousel-indicators">
     <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
     <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>

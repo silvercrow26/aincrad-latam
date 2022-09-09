@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import { useAuth } from "../../firebase/context/AuthContext";
-import { useNavigate } from "react-router-dom";
-
+import { Link, useNavigate } from "react-router-dom";
+import '../pages/login.css' 
 export const LoginPage = () => {
+  const [aincradLogo, setAincradLogo] = useState("./aincradlogo.png");
+
   const [user, setUser] = useState({
     email: "",
     password: "",
@@ -10,7 +12,7 @@ export const LoginPage = () => {
 
   const { login } = useAuth();
   const navigate = useNavigate();
-  const [error, setError] = useState();
+  const [error, setError] = useState('');
 
   const handleChange = ({ target: { name, value } }) =>
     setUser({ ...user, [name]: value });
@@ -29,38 +31,59 @@ export const LoginPage = () => {
         
         }else if(error.code === "auth/wrong-password"){
             setError('La contraseña es incorrecta')
+        }else if(error.code === 'auth/invalid-email'){
+          setError('El email es invalido')
         }else{
             setError(error.message);
         }
+        
     }
   };
 
   return (
-    <div className="bg-white container shadow-lg">
-      <h2 className="text-center text-dark">login page</h2>
-      <div>
-        <form className="container" onSubmit={handleSubmit}>
-          <label className="mb-3">Email</label>
+    
+    <div className="container shadow-lg pb-5 fondoLogin">
+      <video className="" autoPlay loop muted>
+          <source src="./background.mp4" type="video/mp4"></source>
+        </video>
+      <div className="">
+        <div className="d-flex justify-content-center">
+      <img src={aincradLogo} className="w-25 pt-3 " alt="" />
+        </div>
+
+        <div className="row">
+        <div className="col-md-12 col-sm-12">
+        <form className="container text-light  " onSubmit={handleSubmit}>
+          <label className=" form-label mb-3">Email</label> <span className="text-danger">*</span>
           <input
             type="email"
             placeholder="correo@gmail.com"
             name="email"
-            className="form-control w-50 mb-3"
+            className="form-control w-100 mb-3 border-success border-2"
+            required
             onChange={handleChange}
             />
-          <label className="mb-3">Contraseña</label>
+          <label className=" form-label mb-3">Contraseña</label> <span className="text-danger">*</span>
           <input
             type="password"
             placeholder="******"
             name="password"
-            className="form-control w-50"
+            className="form-control w-100 border-success border-2"
+            required
             onChange={handleChange}
             />
-            {error && <p className="alert alert-danger w-50 mt-2">{error}</p>}
-          <button className="btn btn-success mt-2" type="submit">
-            Login
+            {error && <p className="alert alert-danger w-100 mt-2 text-center">{error}</p>}
+          <button className="buttonLogin mt-3" type="submit" >
+            Log In
           </button>
         </form>
+        <div className="d-flex justify-content-center">
+        <a className="text-primary crearAccount"><Link to="/register">Crear una cuenta de aincradlatam.net gratis </Link></a>
+
+        </div>
+       
+      </div>
+            </div>
       </div>
     </div>
   );
