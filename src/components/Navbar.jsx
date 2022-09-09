@@ -1,14 +1,15 @@
 import React, { useState, useEffect } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Link, useNavigate, useParams } from "react-router-dom";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import {faUser} from '@fortawesome/free-solid-svg-icons'
 import { useAuth } from "../firebase/context/AuthContext";
 import Swal from 'sweetalert2'
 export const Navbar = () => {
-  const [aincradLogo, setAincradLogo] = useState("./aincradlogo.png");
+  const [aincradLogo, setAincradLogo] = useState("/aincradlogo.png");
   const { user, logout } = useAuth();
   const [error, setError] = useState(false)
+  // console.log(user.uid)
   const navigate = useNavigate();
-
 
   const handleLogout = async() => {
     await logout()
@@ -39,7 +40,7 @@ export const Navbar = () => {
     <div>
           {!user ? (
       <nav className="navbar navbar-expand-lg bg-dark fixed-top bgNavbar text-light mb-5 ">
-        <div className="container-fluid ">
+        <div className="container-fluid mx-5 ">
           <a className="navbar-brand text-light" href="#" id="inicio">
             <img src={aincradLogo} className="logoAincrad" />{" "}
           </a>
@@ -70,7 +71,7 @@ export const Navbar = () => {
                   Veloren
                 </Link>
               </li>
-              <li className="nav-item"   onClick={needLogin}>
+              <li className="nav-item" onClick={needLogin}>
                 <Link className="nav-link disabled" to="unturned">
                   Unturned
                 </Link>
@@ -95,8 +96,8 @@ export const Navbar = () => {
                 </div>
                 </nav>
                 ) : (
-                  <nav className="navbar navbar-expand-lg bg-dark fixed-top bgNavbar text-light mb-5 ">
-        <div className="container-fluid ">
+                  <nav className="navbar navbar-expand-lg bg-dark fixed-top bgNavbar text-light mb-5">
+        <div className="container-fluid mx-5 ">
           <a className="navbar-brand text-light" href="#" id="inicio">
             <img src={aincradLogo} className="logoAincrad" />{" "}
           </a>
@@ -123,12 +124,12 @@ export const Navbar = () => {
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link text-light efectoLista" to="veloren">
+                <Link className="nav-link text-light efectoLista" to="/section/veloren">
                   Veloren
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link text-light efectoLista" to="unturned">
+                <Link className="nav-link text-light efectoLista" to="/section/unturned">
                   Unturned
                 </Link>
               </li>
@@ -141,17 +142,17 @@ export const Navbar = () => {
                   Donaciones❤️
                 </a>
               </li>
-              <li className="nav-item">
-                <a
-                  className="nav-link text-light efectoLista text-light"
-                  href=""
-                  >
-                  Perfil
-                </a>
-              </li>
-              <li>
-                <button className="buttonLogout" onClick={handleLogout}>logout</button>
-              </li>
+              <li class="nav-item dropdown">
+          <a className="nav-link dropdown-toggle text-warning m-auto " href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <FontAwesomeIcon icon={faUser} />
+          </a>
+          <ul className="dropdown-menu bg-dark ">
+            <Link className="dropdown-item text-warning crearAccount" to={`/section/configuracion/perfil/${user.uid}`}>
+            <li>Perfil</li>
+            </Link>
+            <li><a className="dropdown-item text-danger crearAccount" onClick={handleLogout}>Cerrar sesión</a></li>
+          </ul>
+        </li>
             </ul>
           </div>
         </div>

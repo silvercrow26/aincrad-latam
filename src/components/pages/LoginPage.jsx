@@ -4,8 +4,8 @@ import { Link, useNavigate } from "react-router-dom";
 import '../pages/login.css' 
 export const LoginPage = () => {
   const [aincradLogo, setAincradLogo] = useState("./aincradlogo.png");
-
-  const [user, setUser] = useState({
+  const { user} = useAuth();
+  const [userLogged, setUserLogged] = useState({
     email: "",
     password: "",
   });
@@ -15,13 +15,13 @@ export const LoginPage = () => {
   const [error, setError] = useState('');
 
   const handleChange = ({ target: { name, value } }) =>
-    setUser({ ...user, [name]: value });
+    setUserLogged({ ...userLogged, [name]: value });
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError('')
     try {
-      await login(user.email, user.password);
+      await login(userLogged.email, userLogged.password);
       navigate("/");
     } catch (error) {
         if(error.code === "auth/internal-error"){
@@ -36,7 +36,7 @@ export const LoginPage = () => {
         }else{
             setError(error.message);
         }
-        
+      
     }
   };
 
@@ -73,9 +73,12 @@ export const LoginPage = () => {
             onChange={handleChange}
             />
             {error && <p className="alert alert-danger w-100 mt-2 text-center">{error}</p>}
-          <button className="buttonLogin mt-3" type="submit" >
+            {user ? (<div className="alert alert-danger text-center w-100 my-3">Debe cerrar sesión primero</div>) : null}
+          {user ? (<button className="btn btn-danger disabled w-100">
             Log In
-          </button>
+          </button>) : (<button className="buttonLogin mt-3" type="submit" >
+            Log In
+          </button>)}
         </form>
         <div className="d-flex justify-content-center">
         <a className="text-primary crearAccount"><Link to="/register">Crear una cuenta de aincradlatam.net gratis </Link></a>

@@ -16,21 +16,18 @@ export const AuthProvider = ({children}) =>  {
 
 
     const signup = (email, password) => createUserWithEmailAndPassword(auth, email , password)
-    
+
     const login = (email, password) => signInWithEmailAndPassword(auth, email, password)
 
     const logout = () => signOut(auth)
 
     useEffect(() => {
         onAuthStateChanged(auth, currentUser => {
-            console.log(currentUser)
-            console.log(auth)
             setUser(currentUser)
         })
     }, [])
+ 
 
-
-
-    return <AuthContext.Provider value={{ signup, login, user, logout }}>{children}</AuthContext.Provider>
+    return <AuthContext.Provider value={{ signup, login, user, logout, auth}}>{children}</AuthContext.Provider>
 
 }

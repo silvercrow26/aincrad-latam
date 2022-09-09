@@ -33,6 +33,17 @@ export const Staff = () => {
             </div>
 
           </div>
+          <div className="d-flex justify-content-center mb-4 animate__animated animate__fadeIn animate__delay-4s">
+             <div className="card text-center mx-3">
+              <img className="card-img-top rounded-circle" src="./fega.jpg" alt="Card image cap" />
+              <div className="card-body">
+                <h5 className="card-title">Jukergan</h5>
+                <a className="card-text text-light text-decoration-none" target="_blank" href="https://www.twitch.tv/jukergan" >@Jukergan</a><br />
+                <span className="text-warning">MOD</span><br />
+                <b className="">Graphic Designer</b>
+              </div>
+            </div>
+          </div>
     </div>
   )
 }

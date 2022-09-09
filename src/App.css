@@ -3,10 +3,11 @@ body {
   margin: 0;
   height: 100%;
   background-color: black !important;
-  margin-top: 74px;
+  margin-top: 71px;
 }
 .aincradLogoHome{
   width: 190px;
+ 
 }
 
 html::-webkit-scrollbar {
@@ -357,4 +358,8 @@ form {
  
  .buttonRegister:hover:before {
   transform: translateX(15em);
+ }
+
+ .logoAincradPerfil{
+   width:  200px;
  }

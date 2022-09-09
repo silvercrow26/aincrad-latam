@@ -8,6 +8,7 @@ import { Staff } from "../Staff";
 import { Contact } from "../Contact";
 import { Donate } from "../Donate";
 import { Carousel } from "../Carousel";
+import { onAuthStateChanged } from "firebase/auth";
 
 
 export const HomePage = () => {
@@ -23,15 +24,15 @@ export const HomePage = () => {
         </video>
 
         <Carousel />
-        <div className="container content mt-5 text-light">
-          <div className="d-flex justify-content-center" >
-        <img src={aincradLogo} alt="Aincrad logo" className="animate__animated animate__fadeInDown animate__delay-1s aincradLogoHome" /> 
-
-          </div>
+        <div className="container content mt-5 text-light mb-5">
+       
 
           <ServerStatus />
           {/* <ImagenHomeItem /> */}
+          <div className="d-flex justify-content-center" >
+        <img src={aincradLogo} alt="Aincrad logo" className="animate__animated animate__fadeInDown animate__delay-1s aincradLogoHome " /> 
 
+          </div>
           <Community />
 
           <Staff />
