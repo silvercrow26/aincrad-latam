@@ -25,21 +25,19 @@ export const VelorenForm = () => {
         e.preventDefault();
         
         axios.get('https://sheet.best/api/sheets/33a27dce-5302-4b16-865e-a05867f5b4b2').then(
-            ({data}) => {
-                // setTabla([response, ...tabla]);
+            (response) => {
+                setTabla([response, ...tabla]);
                 // console.log(response);
+                // const userduplicado = data.filter(
+                //      (resp) => { resp.UserId == user.uid })
 
-                console.log(data);
-                const userduplicado = data.filter(
-                     (resp) => { resp.UserId == user.uid })
+                // console.log(userduplicado);
 
-                console.log(userduplicado);
-
-                // const userDetected = tabla.find(() => data.UserId === user.uid)
+                const userDetected = tabla.find((id) => id === tabla.UserId)
 
                 // console.log(userDetected);
                 
-                if (!userduplicado) {
+                if (userDetected) {
                     alert('ya existe.')
                 } else {
 
