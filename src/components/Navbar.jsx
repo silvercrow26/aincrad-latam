@@ -124,7 +124,7 @@ export const Navbar = () => {
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link text-light efectoLista" to="/section/veloren">
+                <Link className="nav-link text-light efectoLista" to="/section/veloren/inscription">
                   Veloren
                 </Link>
               </li>
