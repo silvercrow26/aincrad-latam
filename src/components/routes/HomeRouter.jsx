@@ -10,6 +10,7 @@ import { UnturnedPage } from "../pages/UnturnedPage";
 import { Perfil } from "../pages/Perfil";
 import { PrivateRouter } from "./PrivateRouter";
 import { PublicRouter } from "./PublicRouter";
+import { VelorenForm } from "../pages/veloren/VelorenForm";
 
 export const HomeRouter = () => {
   const { user } = useAuth();
@@ -24,7 +25,8 @@ export const HomeRouter = () => {
         <Route path="/register" element={<RegisterPage />} />
 
         <Route element={<PrivateRouter />}>
-        <Route path="/section/veloren" exact element={<VelorenPage /> } />
+        {/* <Route path="/section/veloren" exact element={<VelorenPage /> } /> */}
+        <Route path="/section/veloren/inscription" exact element={<VelorenForm /> } />
         <Route path="/section/unturned" exact element={<UnturnedPage />} />
         <Route path="/section/configuracion/perfil/:id" exact element={<Perfil />} />
  

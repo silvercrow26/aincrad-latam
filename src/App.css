@@ -363,3 +363,14 @@ form {
  .logoAincradPerfil{
    width:  200px;
  }
+
+ .inscripciones-container{
+  margin-top: 6rem;
+  /* background-color: #82ffc9; */
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+ }
