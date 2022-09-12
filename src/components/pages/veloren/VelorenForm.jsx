@@ -6,7 +6,6 @@ import { useAuth } from '../../../firebase/context/AuthContext'
 export const VelorenForm = () => {
 
     //form states
-    const [tabla, setTabla] = useState([])
     const [userId, setUserId] = useState('')
     const [nickname, setNickname] = useState('')
     const [nivel, setNivel] = useState('')
@@ -15,34 +14,20 @@ export const VelorenForm = () => {
     const [pueblo, setPueblo] = useState('Tremburg')
 
     //Context
-    const {user} = useAuth();
-    console.log(user.uid);
-
-
+    const { user } = useAuth();
 
     //submit event
     const handleSubmit = (e) => {
         e.preventDefault();
-        
-        axios.get('https://sheet.best/api/sheets/33a27dce-5302-4b16-865e-a05867f5b4b2').then(
-            ({data}) => {
-                // setTabla([response, ...tabla]);
-                // console.log(response);
 
-                console.log(data);
-                const userduplicado = data.filter(
-                     (resp) => { resp.UserId == user.uid })
+        axios.get('https://sheet.best/api/sheets/fbf0c6e0-7b21-44eb-98fe-999c0f0ed9d7').then(
+            ({ data }) => {
 
-                console.log(userduplicado);
+                const userDuplicado = data.find(resp => resp.UserId === user.uid)
 
-                // const userDetected = tabla.find(() => data.UserId === user.uid)
-
-                // console.log(userDetected);
-                
-                if (!userduplicado) {
-                    alert('ya existe.')
+                if (userDuplicado) {
+                    Swal.fire("Inscripción denegada", "Esta cuenta ya está registrada.", "error");
                 } else {
-
                     const data = {
                         UserId: userId,
                         Nickname: nickname,
@@ -51,25 +36,20 @@ export const VelorenForm = () => {
                         Fecha: fecha,
                         Pueblo: pueblo,
                     }
-            
-                    axios.post('https://sheet.best/api/sheets/33a27dce-5302-4b16-865e-a05867f5b4b2', data).then((response) => {
+                    axios.post('https://sheet.best/api/sheets/fbf0c6e0-7b21-44eb-98fe-999c0f0ed9d7', data).then((response) => {
                         Swal.fire("Gracias por participar", "Tu registro a sido enviado con exito!", "success");
                         setNickname('')
                         setNivel('')
                         setDiscord('')
-                        setPueblo('')
                     })
                 }
-                // console.log(response);
             }
         )
-
     }
 
     const d = new Date();
     const datestring = d.getDate() + "-" + (d.getMonth() + 1) + "-" + d.getFullYear() + " " +
         d.getHours() + ":" + d.getMinutes();
-
 
     const mostrarFecha = () => {
         setFecha(datestring)
@@ -78,8 +58,6 @@ export const VelorenForm = () => {
     const mostrarId = () => {
         setUserId(user.uid)
     }
-
-    console.log(fecha);
 
     useEffect(() => {
         mostrarFecha();
@@ -93,12 +71,17 @@ export const VelorenForm = () => {
                 <source src="../../background.mp4" type="video/mp4"></source>
             </video>
 
-            <h1 className='text-light'>Bienvenidos al 1° Torneo del Poder</h1>
-            <hr />
+            <h1 className='text-light animate__animated animate__fadeIn animate__delay-1s'>Bienvenidos al 1° Torneo del Poder</h1>
+
+            <div className="d-flex justify-content-around mb-4">
+                <hr className="w-25 animate__animated animate__fadeIn animate__delay-1s" />
+                <hr className="w-25 animate__animated animate__fadeIn animate__delay-1s" />
+            </div>
+
             <form autoComplete='off' onSubmit={handleSubmit}>
                 <div className="form-row inscripciones-container">
 
-                  
+
 
                     <div className="input-group w-75 my-2 col-sm-12">
                         <span className="input-group-text" id="inputGroup-sizing-default">Nickname:</span>
@@ -135,7 +118,7 @@ export const VelorenForm = () => {
 
                     <div className="input-group my-2 w-75 col-sm-12">
                         <span className="input-group-text" id="inputGroup-sizing-default">Pueblo:</span>
-                        <select required className='form-control border-warning p-2' for="inputPueblo"
+                        <select required className='form-control border-warning p-2'
                             onChange={(e) => setPueblo(e.target.value)}
                             value={pueblo}
 
