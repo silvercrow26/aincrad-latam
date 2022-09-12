@@ -4,7 +4,7 @@ import { useAuth } from "../../firebase/context/AuthContext";
 export const Perfil = () => {
   const { user, logout} = useAuth();
   const navigate = useNavigate()
-  const [aincradLogo, setAincradLogo] = useState("../../../public/aincradlogo.png");
+  const [aincradLogo, setAincradLogo] = useState('./defendzor.jpg');
   const [currentUser, setCurrentUser] = useState([{}]);
   useEffect(() => {
     setCurrentUser([{ ...user }]);

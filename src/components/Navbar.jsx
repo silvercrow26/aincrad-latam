@@ -25,7 +25,7 @@ export const Navbar = () => {
     Swal.fire({
       position: 'top-end',
       icon: 'warning',
-      title: 'Debes estar logeado para ver esta sección',
+      title: 'Debes estar logueado para ver esta sección',
       showConfirmButton: false,
       width: 250,
       timer: 1500
