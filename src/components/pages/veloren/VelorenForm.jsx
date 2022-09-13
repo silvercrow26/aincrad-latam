@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import axios from 'redaxios'
+import axios from 'axios'
 import Swal from "sweetalert2"
 import { useAuth } from '../../../firebase/context/AuthContext'
 
