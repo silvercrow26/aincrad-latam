@@ -23,11 +23,11 @@ export const VelorenForm = () => {
         axios.get('https://sheet.best/api/sheets/fbf0c6e0-7b21-44eb-98fe-999c0f0ed9d7').then(
             ({ data }) => {
                 const userDuplicado = data.find(resp => resp.UserId === user.uid)
-                if (userDuplicado){
+                if (userDuplicado) {
                     Swal.fire("Inscripción denegada", "Esta cuenta ya está registrada.", "error");
-                }else if (data.length >= 20){
+                } else if (data.length >= 20) {
                     Swal.fire("Inscripción denegada", "Se llego al cupo maximo de inscriptos", "error");
-                }else{
+                } else {
                     const data = {
                         UserId: userId,
                         Nickname: nickname,
@@ -45,7 +45,7 @@ export const VelorenForm = () => {
                 }
                 console.log(data)
             }
-            )
+        )
     }
 
     const d = new Date();
@@ -67,12 +67,38 @@ export const VelorenForm = () => {
 
     return (
 
-        <div className='container text-light text-center'>
+        <div className='container text-light'>
             <video className="" autoPlay loop muted>
                 <source src="../../background.mp4" type="video/mp4"></source>
             </video>
 
-            <h1 className='text-light title-container animate__animated animate__fadeIn animate__delay-1s'>Bienvenidos al 1° Torneo del Poder</h1>
+            <div className='detail-event d-flex'>
+                <h1 className='text-light mt-3 mb-4 title-container animate__animated animate__fadeIn animate__delay-1s'>Bienvenidos al 1° Torneo del Poder</h1>
+                <h4>Detalles del evento:</h4>
+                <ul className=''>
+                    <li>Los participantes se enfrentarán 1 vs 1 en la arena con un arma melee a elección.</li>
+                    <li>El arma será proporcionada por el encargado.</li>
+                    <li>Los combates estarán separados por categorías (nivel de combate).</li>
+                    <li>Los participantes deberán pagar su respectiva inscripción el día del evento.</li>
+                    <li>Las inscripciones varían de acuerdo a la categoría del participante.</li>
+                    <li>Las armas que empujen fuera de la arena como el martillo estarán deshabilitadas.</li>
+                    <li>Las pociones estarán limitadas a un máximo de 3.</li>
+                    <li>La armadura a utilizar será proporcionada por los administradores.</li>
+                    <li>El pago de la inscripción será recibido por el encargado.</li>
+                    <li>Los espectadores podrán observar el combate desde las gradas.</li>
+                    <li>Los espectadores tienen prohibido realizar ataques de ningún tipo.</li>
+                    <li>El comercio/ventas podrán ser llevadas a cabo antes y después de cada combate.</li>
+                    <li>Las apuestas estarán habilitadas antes de cada combate.</li>
+                    <li>Las apuestas serán llevadas a cabo por un encargado.</li>
+                    <li>Los espectadores tienen prohibido escalar o saltar hacia la arena.</li>
+                    <li>Las apuestas serán llevadas a cabo por un encargado.</li>
+                </ul>
+                <p className='detail-final'>Los detalles del evento pueden variar durante el transcurso de la semana, por lo que deberán estar atentos a los cambios.
+                    Es importante que el formulario de inscripción sea rellenado a consciencia, es decir, deberán proporcionar los datos correctamente, ya que el día del evento se revisarán estos datos y si algo no cuadra, pueden ser descalificados por proporcionar información errónea.
+                    <br/></p>
+                    <span className='text-danger'>Quienes incumplan con lo establecido serán sancionados o descalificados del evento.</span>
+
+            </div>
 
             <div className="d-flex justify-content-around mb-4">
                 <hr className="w-25 animate__animated animate__fadeIn animate__delay-1s" />
@@ -94,7 +120,7 @@ export const VelorenForm = () => {
 
                     <div className="input-group my-2 w-75 col-sm-12">
                         <span className="input-group-text" id="inputGroup-sizing-default">Nivel:</span>
-                        <input type="number" required className="form-control w-50 border-warning p-2" id="inputNivel" placeholder="Nivel de combate"
+                        <input type="number" required className="form-control w-50 border-warning p-2" id="inputNivel" placeholder="Nivel de combate general"
                             onChange={(e) => setNivel(e.target.value)}
                             value={nivel}
                         />

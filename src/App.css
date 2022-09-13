@@ -364,9 +364,8 @@ form {
    width:  200px;
  }
 
- /* formulario registro torneo del poder */
+ /* css torneo del poder */
  .inscripciones-container{
-  /* background-color: #82ffc9; */
   width: 100%;
   height: 100%;
   display: flex;
@@ -375,6 +374,16 @@ form {
   flex-direction: column;
  }
 
- .title-container{
-  margin-top: 6rem;
+ .detail-event{
+  flex-direction: column;
+  align-items: center;
  }
+
+ .detail-final{
+  text-align: justify;
+ }
+ /* .title-container{
+  margin-top: 6rem;
+ } */
+
+ /* fin torneo del poder */
