@@ -74,8 +74,9 @@ export const VelorenForm = () => {
 
             <div className='detail-event d-flex'>
                 <h1 className='text-light mt-3 mb-4 title-container animate__animated animate__fadeIn animate__delay-1s'>Bienvenidos al 1° Torneo del Poder</h1>
-                <h4>Detalles del evento:</h4>
-                <ul className=''>
+                
+                <h4 className='title-container animate__animated animate__fadeIn animate__delay-2s'>Detalles del evento:</h4>
+                <ul className='animate__animated animate__fadeIn animate__delay-2s'>
                     <li>Los participantes se enfrentarán 1 vs 1 en la arena con un arma melee a elección.</li>
                     <li>El arma será proporcionada por el encargado.</li>
                     <li>Los combates estarán separados por categorías (nivel de combate).</li>
@@ -93,19 +94,19 @@ export const VelorenForm = () => {
                     <li>Los espectadores tienen prohibido escalar o saltar hacia la arena.</li>
                     <li>Las apuestas serán llevadas a cabo por un encargado.</li>
                 </ul>
-                <p className='detail-final'>Los detalles del evento pueden variar durante el transcurso de la semana, por lo que deberán estar atentos a los cambios.
+                <p className='detail-final animate__animated animate__fadeIn animate__delay-2s'>Los detalles del evento pueden variar durante el transcurso de la semana, por lo que deberán estar atentos a los cambios.
                     Es importante que el formulario de inscripción sea rellenado a consciencia, es decir, deberán proporcionar los datos correctamente, ya que el día del evento se revisarán estos datos y si algo no cuadra, pueden ser descalificados por proporcionar información errónea.
                     <br/></p>
-                    <span className='text-danger'>Quienes incumplan con lo establecido serán sancionados o descalificados del evento.</span>
+                    <span className='text-danger animate__animated animate__fadeIn animate__delay-2s'>Quienes incumplan con lo establecido serán sancionados o descalificados del evento.</span>
 
             </div>
-
             <div className="d-flex justify-content-around mb-4">
-                <hr className="w-25 animate__animated animate__fadeIn animate__delay-1s" />
-                <hr className="w-25 animate__animated animate__fadeIn animate__delay-1s" />
-            </div>
+                    <hr className="w-25 animate__animated animate__fadeIn animate__delay-3s" />
+                    <hr className="w-25 animate__animated animate__fadeIn animate__delay-3s" />
+                </div>
+          
 
-            <form className='animate__animated animate__fadeIn animate__delay-2s' autoComplete='off' onSubmit={handleSubmit}>
+            <form className='animate__animated animate__fadeIn animate__delay-3s' autoComplete='off' onSubmit={handleSubmit}>
                 <div className="form-row inscripciones-container">
 
 
