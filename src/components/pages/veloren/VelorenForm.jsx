@@ -22,12 +22,12 @@ export const VelorenForm = () => {
 
         axios.get('https://sheet.best/api/sheets/fbf0c6e0-7b21-44eb-98fe-999c0f0ed9d7').then(
             ({ data }) => {
-
                 const userDuplicado = data.find(resp => resp.UserId === user.uid)
-
-                if (userDuplicado) {
+                if (userDuplicado){
                     Swal.fire("Inscripción denegada", "Esta cuenta ya está registrada.", "error");
-                } else {
+                }else if (data.length >= 20){
+                    Swal.fire("Inscripción denegada", "Se llego al cupo maximo de inscriptos", "error");
+                }else{
                     const data = {
                         UserId: userId,
                         Nickname: nickname,
@@ -43,8 +43,9 @@ export const VelorenForm = () => {
                         setDiscord('')
                     })
                 }
+                console.log(data)
             }
-        )
+            )
     }
 
     const d = new Date();
