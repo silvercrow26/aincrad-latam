@@ -32,7 +32,11 @@ export const ServerStatusGrid = ({ id, hostname, is_online, players, maxplayers,
   return (
     <div>
       <table className="table table-borderless text-light text-center mt-3">
-      <b className="text-success">Unturned</b>
+      <thead>
+              <tr>
+                <th className="text-success">Unturned</th>
+              </tr>
+            </thead>
         <tbody>
 
           <tr>

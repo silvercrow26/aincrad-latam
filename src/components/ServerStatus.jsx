@@ -26,7 +26,11 @@ export const ServerStatus = () => {
       <div className="row">
         <div className="col-md-6 d-flex justify-content-center col-sm-12 animate__animated animate__fadeIn animate__delay-2s">
           <table className="table table-borderless text-light text-center mt-3">
-              <b className="text-warning">Veloren</b>
+            <thead>
+              <tr>
+                <th className="text-warning">Veloren</th>
+              </tr>
+            </thead>
             <tbody>
               <tr>
                 <td colSpan={2}>Aincrad LATAM</td>
@@ -36,10 +40,10 @@ export const ServerStatus = () => {
                 
               </tr>
                 <tr>
-                    <td>IP: veloren.aincradlatam.net</td>
+                    <td>IP:<span style={{fontWeight:'bold'}}> veloren.aincradlatam.net</span></td>
                 </tr>
               <tr>
-                <td colSpan={2}>Capacidad maxima: <b>60 Jugadores</b></td>
+                <td colSpan={2}>Capacidad maxima: <span style={{fontWeight:'bold'}}> 60 Jugadores</span></td>
               </tr>
 
               <tr>

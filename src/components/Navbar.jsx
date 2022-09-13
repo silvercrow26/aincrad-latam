@@ -142,7 +142,7 @@ export const Navbar = () => {
                   Donaciones❤️
                 </a>
               </li>
-              <li class="nav-item dropdown">
+              <li className="nav-item dropdown">
           <a className="nav-link dropdown-toggle text-warning m-auto " href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             <FontAwesomeIcon icon={faUser} />
           </a>

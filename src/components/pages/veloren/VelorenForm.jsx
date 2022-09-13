@@ -72,14 +72,14 @@ export const VelorenForm = () => {
                 <source src="../../background.mp4" type="video/mp4"></source>
             </video>
 
-            <h1 className='text-light animate__animated animate__fadeIn animate__delay-1s'>Bienvenidos al 1° Torneo del Poder</h1>
+            <h1 className='text-light title-container animate__animated animate__fadeIn animate__delay-1s'>Bienvenidos al 1° Torneo del Poder</h1>
 
             <div className="d-flex justify-content-around mb-4">
                 <hr className="w-25 animate__animated animate__fadeIn animate__delay-1s" />
                 <hr className="w-25 animate__animated animate__fadeIn animate__delay-1s" />
             </div>
 
-            <form autoComplete='off' onSubmit={handleSubmit}>
+            <form className='animate__animated animate__fadeIn animate__delay-2s' autoComplete='off' onSubmit={handleSubmit}>
                 <div className="form-row inscripciones-container">
 
 
