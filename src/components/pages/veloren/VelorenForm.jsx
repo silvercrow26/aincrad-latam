@@ -12,6 +12,7 @@ export const VelorenForm = () => {
     const [discord, setDiscord] = useState('')
     const [fecha, setFecha] = useState('')
     const [pueblo, setPueblo] = useState('Tremburg')
+    const [carta, setCarta] = useState('../../carta_escrita.png')
 
     //Context
     const { user } = useAuth();
@@ -74,7 +75,7 @@ export const VelorenForm = () => {
 
             <div className='detail-event d-flex'>
                 <h1 className='text-light mt-3 mb-4 title-container animate__animated animate__fadeIn animate__delay-1s'>Bienvenidos al 1° Torneo del Poder</h1>
-                
+                <img className='animate__animated animate__fadeIn animate__delay-2s' src={carta} />
                 <h4 className='title-container animate__animated animate__fadeIn animate__delay-2s'>Detalles del evento:</h4>
                 <ul className='animate__animated animate__fadeIn animate__delay-2s'>
                     <li>Los participantes se enfrentarán 1 vs 1 en la arena con un arma melee a elección.</li>

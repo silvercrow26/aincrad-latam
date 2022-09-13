@@ -4,12 +4,11 @@ import { useAuth } from "../../firebase/context/AuthContext";
 export const Perfil = () => {
   const { user, logout} = useAuth();
   const navigate = useNavigate()
-  const [aincradLogo, setAincradLogo] = useState('./defendzor.jpg');
   const [currentUser, setCurrentUser] = useState([{}]);
+  
   useEffect(() => {
     setCurrentUser([{ ...user }]);
   }, [user]);
-
 
   const handleLogout = async() => {
     await logout()
@@ -26,7 +25,7 @@ export const Perfil = () => {
       </h2>
       <div className="d-flex justify-content-center">
         <img
-          src={aincradLogo}
+          src='/aincradlogo.png'
           className=" mt-4 mb-5 logoAincradPerfil"
           alt="aincrad latam logo"
           />
