@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import paypal from "../assets/paypal.png";
 export const Donate = () => {
   return (
@@ -31,6 +32,9 @@ export const Donate = () => {
             <div>
               <img className="w-25 mx-5" src={paypal} alt="logo paypal" />
               <p>aincradlatam@gmail.com</p>
+            </div>
+            <div>
+            <a className="btn btn-outline-light w-50 mb-3" href="https://ko-fi.com/aincradlatam/goal?g=0" target="_blank">Ko-Fi❤️ Donations</a>
             </div>
             <div>
               <a
