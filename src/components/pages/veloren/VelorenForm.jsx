@@ -12,7 +12,7 @@ export const VelorenForm = () => {
     const [discord, setDiscord] = useState('')
     const [fecha, setFecha] = useState('')
     const [pueblo, setPueblo] = useState('Tremburg')
-    const [carta, setCarta] = useState('../../carta_escrita.png')
+    const [carta, setCarta] = useState('../../manuscrito.gif')
 
     //Context
     const { user } = useAuth();
