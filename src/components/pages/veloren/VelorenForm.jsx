@@ -20,33 +20,36 @@ export const VelorenForm = () => {
     //submit event
     const handleSubmit = (e) => {
         e.preventDefault();
-
-        axios.get('https://sheet.best/api/sheets/fbf0c6e0-7b21-44eb-98fe-999c0f0ed9d7').then(
-            ({ data }) => {
-                const userDuplicado = data.find(resp => resp.UserId === user.uid)
-                if (userDuplicado) {
-                    Swal.fire("Inscripción denegada", "Esta cuenta ya está registrada.", "error");
-                } else if (data.length >= 20) {
-                    Swal.fire("Inscripción denegada", "Se llego al cupo maximo de inscriptos", "error");
-                } else {
-                    const data = {
-                        UserId: userId,
-                        Nickname: nickname,
-                        Nivel: nivel,
-                        Discord: discord,
-                        Fecha: fecha,
-                        Pueblo: pueblo,
+        try{
+            axios.get('https://sheet.best/api/sheets/cd88e379-b19b-4dc5-a022-a6f4ab99b4b8').then(
+                ({ data }) => {
+                    const userDuplicado = data.find(resp => resp.UserId === user.uid)
+                    if (userDuplicado) {
+                        Swal.fire("Inscripción denegada", "Esta cuenta ya está registrada.", "error");
+                    } else if (data.length >= 20) {
+                        Swal.fire("Inscripción denegada", "Se llego al cupo maximo de inscriptos", "error");
+                    } else {
+                        const data = {
+                            UserId: userId,
+                            Nickname: nickname,
+                            Nivel: nivel,
+                            Discord: discord,
+                            Fecha: fecha,
+                            Pueblo: pueblo,
+                        }
+                        axios.post('https://sheet.best/api/sheets/cd88e379-b19b-4dc5-a022-a6f4ab99b4b8', data).then((response) => {
+                            Swal.fire("Gracias por participar", "Tu registro a sido enviado con exito!", "success");
+                            setNickname('')
+                            setNivel('')
+                            setDiscord('')
+                        })
                     }
-                    axios.post('https://sheet.best/api/sheets/fbf0c6e0-7b21-44eb-98fe-999c0f0ed9d7', data).then((response) => {
-                        Swal.fire("Gracias por participar", "Tu registro a sido enviado con exito!", "success");
-                        setNickname('')
-                        setNivel('')
-                        setDiscord('')
-                    })
                 }
-                console.log(data)
-            }
-        )
+                
+                )
+            }catch(error){
+                console.log(error.response)
+        }
     }
 
     const d = new Date();

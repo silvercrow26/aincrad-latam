@@ -26,7 +26,6 @@ export const Perfil = () => {
       <div className="d-flex justify-content-center">
         <img
           src='/aincradlogo.png'
-          className=" mt-4 mb-5 logoAincradPerfil"
           alt="aincrad latam logo"
           />
       </div>
