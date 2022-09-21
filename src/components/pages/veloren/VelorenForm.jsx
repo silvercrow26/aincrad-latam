@@ -40,8 +40,9 @@ export const VelorenForm = () => {
                         axios.post('https://sheet.best/api/sheets/b59e892c-34b0-4c66-99b4-7395ef46140c', data).then((response) => {
                             Swal.fire("Gracias por participar", "Tu registro a sido enviado con exito!", "success");
                             setNickname('')
-                            setNivel('')
+                            setEmail('')
                             setDiscord('')
+                            setPago('')
                         })
                     }
                 }
