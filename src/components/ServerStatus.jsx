@@ -42,12 +42,18 @@ export const ServerStatus = () => {
                 <tr>
                     <td>IP:<span style={{fontWeight:'bold'}}> veloren.aincradlatam.net</span></td>
                 </tr>
+                <tr>
+                  <b className="">Veloren VIP (24/09)</b>
+                </tr>
               <tr>
-                <td colSpan={2}>Capacidad maxima: <span style={{fontWeight:'bold'}}> 80 Jugadores</span></td>
+              <td><span className="text-primary" style={{fontWeight:'bold'}}> velorenvip.aincradlatam.net 💎</span></td>
+              </tr>
+              <tr>
+                <td colSpan={2}>Capacidad maxima: <span style={{fontWeight:'bold'}}> 60 Jugadores</span></td>
               </tr>
 
               <tr>
-                <td colSpan={2}>Version: af3f9dc</td>
+                <td colSpan={2}>Version: af3f9dcc</td>
               </tr>
             </tbody>
           </table>
