@@ -43,9 +43,6 @@ export const LoginPage = () => {
   return (
     
     <div className="container shadow-lg pb-5 fondoLogin">
-      <video className="" autoPlay loop muted>
-          <source src="./background.mp4" type="video/mp4"></source>
-        </video>
       <div className="">
         <div className="d-flex justify-content-center">
       <img src={aincradLogo} className="w-25 pt-3 " alt="" />

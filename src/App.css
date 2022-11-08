@@ -2,11 +2,22 @@ body {
   padding: 0;
   margin: 0;
   height: 100%;
-  background-color: black !important;
-  margin-top: 75px;
+  background-color: #23272a!important;
+  margin-top: 15px;
+
+  font-family: 'Barlow', sans-serif;
+}
+
+.bgNavbar {
+  background-color: #111315 !important;
+  filter: opacity(85%);
 }
 .aincradLogoHome{
   width: 190px;
+ 
+}
+.aincradLogoFooter{
+  width: 110px;
  
 }
 
@@ -20,18 +31,6 @@ html::-webkit-scrollbar-thumb {
 
   background-color: #2e3338;
 
-}
-
-video {
-  transform: translate(-50% -50%);
-  object-fit: cover;
-  left: 0;
-  top: 0;
-  position: fixed;
-  width: 100vw;
-  height: 100vh;
-  z-index: -1;
-  filter: opacity(30%);
 }
 
 .content {
@@ -163,11 +162,6 @@ td {
 }
  
 
-
-.bgNavbar {
-  background-color: #222629 !important;
-  filter: opacity(85%);
-}
 
 /* .buttonNav{
   background-color: black !important ; 
@@ -387,3 +381,62 @@ form {
  } */
 
  /* fin torneo del poder */
+
+.backgroundCard{
+  background-color: #111315 !important;
+  filter: opacity(80%);
+  border: solid 1px #eda031; 
+  box-sizing: border-box;
+}
+.backgroundEvent{
+  text-shadow: 0 0 5px  #eda031,
+    0 0 10px  #eda031,
+    0 0 20px  #eda031,
+    0 0 40px  #eda031,
+    0 0 80px  #eda031,
+    0 0 90px  #eda031,
+    0 0 100px  #eda031;
+}
+.carouselWidth{
+  height: 210px;
+}
+.cardFooter{
+  background-color: #111315 !important;
+  
+
+    /* Height of the footer */
+}
+
+.fegaCard{
+  width: 160px;
+  height: 151px;
+}
+.accordion-button{
+  color: #202225 !important ;
+}
+.parrafoTextarea{
+  
+  /* Control de la altura con base en el texto del div*/
+  height: auto;
+  word-wrap: break-word;
+  
+}
+
+.contenedorPublication{
+
+  word-wrap: initial !important;
+  max-width: 100%;
+}
+
+.staffCard{
+  cursor: pointer;
+}
+
+.staffCard:hover{
+  filter: grayscale(70%);
+  transition-duration: 500ms;
+}
+
+.headerStaff{
+  background-color: #111315
+}

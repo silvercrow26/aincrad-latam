@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import {faUser} from '@fortawesome/free-solid-svg-icons'
+import {faHome, faUserShield, faCartShopping, faTowerCell, faEnvelope, faHandHoldingDollar,faUser, faScrewdriverWrench} from '@fortawesome/free-solid-svg-icons'
 import { useAuth } from "../firebase/context/AuthContext";
 import Swal from 'sweetalert2'
 export const Navbar = () => {
@@ -39,11 +39,8 @@ export const Navbar = () => {
   return (
     <div>
           {!user ? (
-      <nav className="navbar navbar-expand-lg bg-dark fixed-top bgNavbar text-light mb-5 ">
-        <div className="container-fluid mx-5 ">
-          <a className="navbar-brand text-light" href="#" id="inicio">
-            <img src={aincradLogo} className="logoAincrad" />{" "}
-          </a>
+      <nav className="navbar navbar-expand-lg bg-dark bgNavbar text-light">
+        <div className="container ">
           <button
             className="navbar-toggler collapsed text-light "
             type="button"
@@ -59,78 +56,28 @@ export const Navbar = () => {
             className="collapse navbar-collapse "
             id="navbarSupportedContent"
           >
-            <ul className="navbar-nav mb-2 mb-lg-0 mx-5 ms-auto ">
-              <li className="nav-item ">
+            <ul className="navbar-nav mb-2 mb-lg-0 mx-auto ">
+            <li className="nav-item">
                 <Link className="nav-link text-light efectoLista" to="/">
-                  Inicio
-                </Link>
-              </li>
- 
-              <li className="nav-item" onClick={needLogin}>
-                <Link className="nav-link disabled" to="veloren">
-                  Veloren
-                </Link>
-              </li>
-              <li className="nav-item" onClick={needLogin}>
-                <Link className="nav-link disabled" to="unturned">
-                  Unturned
-                </Link>
-              </li>
-             
-              <li className="nav-item">
-                <a
-                  className="nav-link text-light efectoListaDonate text-warning"
-                  href="#donate"
-                  onClick={toDonate}
-                >
-                  Donaciones❤️
-                </a>
-              </li>
-              <li>  
-                <Link to="/login">
-                  <button className="buttonNav">Login</button>
-                </Link>
-                  </li>
-                </ul>
-                </div>
-                </div>
-                </nav>
-                ) : (
-                  <nav className="navbar navbar-expand-lg bg-dark fixed-top bgNavbar text-light mb-5">
-        <div className="container-fluid mx-5 ">
-          <a className="navbar-brand text-light" href="#" id="inicio">
-            <img src={aincradLogo} className="logoAincrad" />{" "}
-          </a>
-          <button
-            className="navbar-toggler collapsed buttonNav text-light "
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-            >
-            <span className="navbar-toggler-icon text-light mt-2">🢃</span>
-          </button>
-          <div
-            className="collapse navbar-collapse "
-            id="navbarSupportedContent"
-            >
-            <ul className="navbar-nav mb-2 mb-lg-0 mx-5 ms-auto ">
-              
-              <li className="nav-item ">
-                <Link className="nav-link text-light efectoLista" to="/">
-                  Inicio
+                <FontAwesomeIcon icon={faHome} /> Inicio 
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link text-light efectoLista" to="/section/veloren/inscription">
-                  Veloren
+                <Link className="nav-link text-light efectoLista" to="/staff">
+                <FontAwesomeIcon icon={faUserShield} /> Staff
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link text-light efectoLista" to="/section/unturned">
-                  Unturned
+              <a className="nav-link text-light efectoLista" href="https://aincradlatam.tebex.io/" target="_blank"><FontAwesomeIcon icon={faCartShopping} /> Tienda</a>
+              </li>
+              <li className="nav-item">
+                <Link className="nav-link text-light efectoLista" to="/contacto">
+                <FontAwesomeIcon icon={faEnvelope} /> Contacto
+                </Link>
+              </li>
+              <li className="nav-item">  
+                <Link className="nav-link text-light efectoLista" to="/FAQ">
+                <FontAwesomeIcon icon={faTowerCell} /> FAQ
                 </Link>
               </li>
               <li className="nav-item">
@@ -139,12 +86,74 @@ export const Navbar = () => {
                   href="#donate"
                   onClick={toDonate}
                   >
-                  Donaciones❤️
+                  <FontAwesomeIcon icon={faHandHoldingDollar} /> Donaciones
                 </a>
               </li>
-              <li className="nav-item dropdown">
+                </ul>
+                </div>
+                </div>
+                </nav>
+                ) : (
+                  <nav className="navbar navbar-expand-lg bg-dark bgNavbar text-light">
+                  <div className="container ">
+                    <button
+                      className="navbar-toggler collapsed text-light "
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#navbarSupportedContent"
+                      aria-controls="navbarSupportedContent"
+                      aria-expanded="false"
+                      aria-label="Toggle navigation"
+                    >
+                      <span className="navbar-toggler-icon text-light mt-2">🢃</span>
+                    </button>
+                    <div
+                      className="collapse navbar-collapse "
+                      id="navbarSupportedContent"
+                    >
+                      <ul className="navbar-nav mb-2 mb-lg-0 mx-auto ">
+                      <li className="nav-item">
+                          <Link className="nav-link text-light efectoLista" to="/">
+                          <FontAwesomeIcon icon={faHome} /> Inicio 
+                          </Link>
+                        </li>
+                        <li className="nav-item">
+                          <Link className="nav-link text-light efectoLista" to="/staff">
+                          <FontAwesomeIcon icon={faUserShield} /> Staff
+                          </Link>
+                        </li>
+                        <li className="nav-item">
+                        <a className="nav-link text-light efectoLista" href="https://aincradlatam.tebex.io/" target="_blank"><FontAwesomeIcon icon={faCartShopping} /> Tienda</a>
+                        </li>
+                        <li className="nav-item">
+                          <Link className="nav-link text-light efectoLista" to="/contacto">
+                          <FontAwesomeIcon icon={faEnvelope} /> Contacto
+                          </Link>
+                        </li>
+                        <li className="nav-item">  
+                          <Link className="nav-link text-light efectoLista" to="/FAQ">
+                          <FontAwesomeIcon icon={faTowerCell} /> FAQ
+                          </Link>
+                        </li>
+                        <li className="nav-item">
+                          <a
+                            className="nav-link text-light efectoListaDonate text-light"
+                            href="#donate"
+                            onClick={toDonate}
+                            >
+                            <FontAwesomeIcon icon={faHandHoldingDollar} /> Donaciones
+                          </a>
+                        </li>
+                        <li className="nav-item">
+                          <Link className="efectoListaDonate nav-link text-light" to={"/section/configuracion/panel"}>
+                            <FontAwesomeIcon icon={faScrewdriverWrench} /> Panel
+                          </Link>
+                          
+                        </li>
+                      
+              {/* <li className="nav-item dropdown">
           <a className="nav-link dropdown-toggle text-warning m-auto " href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            <FontAwesomeIcon icon={faUser} />
+            <FontAwesomeIcon icon={faUser} />   
           </a>
           <ul className="dropdown-menu bg-dark ">
             <Link className="dropdown-item text-warning crearAccount" to={`/section/configuracion/perfil/${user.uid}`}>
@@ -152,7 +161,8 @@ export const Navbar = () => {
             </Link>
             <li><a className="dropdown-item text-danger crearAccount" onClick={handleLogout}>Cerrar sesión</a></li>
           </ul>
-        </li>
+        </li> */}
+
             </ul>
           </div>
         </div>

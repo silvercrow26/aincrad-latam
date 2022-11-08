@@ -1,7 +1,9 @@
 import React, {useState} from "react";
 import emailjs from '@emailjs/browser';
 import Swal from 'sweetalert2'
+import {faEnvelope} from '@fortawesome/free-solid-svg-icons'
 import { validarEmail, validarTextArea } from "./helpers/validacionesContacto";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 export const Contact = () => {
 
     const [email, setEmail] = useState("");
@@ -36,27 +38,27 @@ export const Contact = () => {
 
   return (
     <div className="mb-5">
-      <h2 className="animate__animated animate__fadeInDown animate__delay-5s text-center mt-5" id="#contacto">
-        Contacto
+      <h2 className="text-center mt-5 text-light animate__animated animate__fadeIn animate__delay-0.5s" id="#contacto">
+      <FontAwesomeIcon icon={faEnvelope} /> Contacto
       </h2>
       <div className="d-flex justify-content-around">
-        <hr className="w-25 animate__animated animate__fadeIn animate__delay-5s" />
-        <hr className="w-25 animate__animated animate__fadeIn animate__delay-5s" />
+        <hr className="w-25 text-light" />
+        <hr className="w-25 text-light" />
       </div>
 
-      <form onSubmit={handleSubmit}>
-        <label className="label-control mb-2">Nombre</label> <span className="text-danger">*</span>
+      <form onSubmit={handleSubmit} className="animate__animated animate__fadeIn animate__delay-0.5s ">
+        <label className="label-control mb-2 text-light ">Nombre</label> <span className="text-danger">*</span>
         <input
-          className="form-control mb-4 inputForm shadow-none text-light row animate__animated animate__fadeIn animate__delay-5s"
+          className="form-control mb-4 inputForm shadow-none text-light row"
           type="text"
           placeholder="Ingrese su nombre"
           name="name"
           autoComplete='off'
           required
         />
-        <label className="label-control mb-2">Email</label> <span className="text-danger">*</span>
+        <label className="label-control mb-2 text-light">Email</label> <span className="text-danger">*</span>
         <input
-          className="form-control mb-4 inputForm shadow-none text-light row animate__animated animate__fadeIn animate__delay-5s"
+          className="form-control mb-4 inputForm shadow-none text-light row"
           type="email"
           placeholder="Ingrese su email"
           onChange={(e) => setEmail(e.target.value) }
@@ -65,9 +67,9 @@ export const Contact = () => {
           autoComplete='off'
           required
         />
-        <label className="label-control mb-2">Mensaje</label> <span className="text-danger">*</span>
+        <label className="label-control mb-2 text-light">Mensaje</label> <span className="text-danger">*</span>
         <textarea
-          className="form-control mb-4 inputForm shadow-none text-light row animate__animated animate__fadeIn animate__delay-5s"
+          className="form-control mb-4 inputForm shadow-none text-light row"
           type="text"
           placeholder="Ingrese su mensaje"
           rows="4"
@@ -80,9 +82,9 @@ export const Contact = () => {
         {error ? (<div class="alert alert-danger text-center" role="alert">
   Porfavor ingrese los datos correctamente
 </div>) : null}
-        <button className="btn btn-success w-100 mb-5 animate__animated animate__fadeIn animate__delay-5s">Enviar</button>
+        <button className="btn btn-success w-100 mb-5 ">Enviar</button>
       </form>
-      <p className="text-center mt-2 animate__animated animate__fadeIn animate__delay-5s">Aincrad LATAM Todos los derechos reservados © 2022</p>
+      <p className="text-center mt-2">Aincrad LATAM Todos los derechos reservados © 2022</p>
     </div>
   );
 };

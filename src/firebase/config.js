@@ -11,16 +11,16 @@ import {getFirestore} from 'firebase/firestore/lite';
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 
 const firebaseConfig = {
-  apiKey: "AIzaSyBl3JvpHR2Y6hHAx8eREqoAEUVzqSJbrtg",
-  authDomain: "aincradlatam-22fb8.firebaseapp.com",
-  projectId: "aincradlatam-22fb8",
-  storageBucket: "aincradlatam-22fb8.appspot.com",
-  messagingSenderId: "1039121343285",
-  appId: "1:1039121343285:web:c359694d4c5e5854c8627c",
-  measurementId: "G-PD04R5C51Z"
+  apiKey: import.meta.env.VITE_APP_apiKey_URL,
+  authDomain: import.meta.env.VITE_APP_authDomain_URL,
+  projectId: import.meta.env.VITE_APP_projectId_URL,
+  storageBucket: import.meta.env.VITE_APP_storageBucket_URL,
+  messagingSenderId: import.meta.env.VITE_APP_messagingSenderId_URL,
+  appId: import.meta.env.VITE_APP_appId_URL,
+  measurementId: import.meta.env.VITE_APP_measurementId_URL,
 };
 // Initialize Firebase
 export const app = initializeApp(firebaseConfig);
 export const auth = getAuth(app);
-// export const getFirestore = getFirestore(app);
+export const db = getFirestore(app);
 const analytics = getAnalytics(app);

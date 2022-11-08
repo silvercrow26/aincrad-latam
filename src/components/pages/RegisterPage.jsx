@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 export const RegisterPage = () => {
   const [aincradLogo, setAincradLogo] = useState("./aincradlogo.png");
   const [userLogged, setUserLogged] = useState({
+    displayName: "",
     email: "",
     password: "",
   });
@@ -39,9 +40,6 @@ export const RegisterPage = () => {
 
   return (
     <div className="container shadow-lg pb-5">
-      <video className="" autoPlay loop muted>
-        <source src="./background.mp4" type="video/mp4"></source>
-      </video>
       <div className="">
         <div className="d-flex justify-content-center">
           <img src={aincradLogo} className="w-25 pt-3 " alt="" />
@@ -50,6 +48,15 @@ export const RegisterPage = () => {
         <div className="row">
           <div className="col-md-12 col-sm-12">
             <form className="container text-light  " onSubmit={handleSubmit}>
+            <label className=" form-label mb-3">Nombre</label>{" "}
+              <span className="text-danger">*</span>
+              <input
+                type="text"
+                placeholder="Aincrad Latam Network"
+                name="displayName"
+                className="form-control w-100 mb-3 border-warning border-2"
+                onChange={handleChange}
+              />
               <label className=" form-label mb-3">Email</label>{" "}
               <span className="text-danger">*</span>
               <input
