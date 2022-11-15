@@ -12,6 +12,8 @@ export const EditPublication = () => {
     setEditing,
   } = useDocuments();
   const { onResetForm } = useForm();
+  const URLpublicaciones = import.meta.env.VITE_APP_PUBLICATION_URL; 
+
 
   const onInputChange = (e) => {
     const { name, value } = e.target;
@@ -22,7 +24,7 @@ export const EditPublication = () => {
     e.preventDefault();
     try{
       const res = await axios.put(
-        `http://localhost:9000/api/publication/${currentData._id}`,
+        `${URLpublicaciones}/${currentData._id}`,
         {
           titulo: currentData.titulo,
           fecha: currentData.fecha,

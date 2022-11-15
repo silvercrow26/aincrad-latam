@@ -23,7 +23,7 @@ export const DocsProvider = ({children}) =>  {
       try{ 
         const res = await axios.get(URLpublicaciones)
         setData(res.data)
-        console.log(data)
+
       }catch(error){
         console.log(error)
       }

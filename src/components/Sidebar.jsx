@@ -65,7 +65,7 @@ export const Sidebar = () => {
                         className="dswidget"
                         src="https://discord.com/widget?id=1008984561461510164&theme=dark"
                         width="95%"
-                        height="400"
+                        height="400" //400
                         allowtransparency="true"
                         sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
                     ></iframe>
