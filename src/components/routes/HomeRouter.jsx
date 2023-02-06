@@ -19,6 +19,7 @@ import { CreatePublication } from "../pages/CreatePublication";
 import { CreateGameEvents } from "../pages/CreateGameEvents";
 import { PublicationPage } from "../pages/PublicationPage";
 import { useDocuments } from "../hooks/useDocuments";
+import { DonatorPage } from "../pages/DonatorPage";
 
 
 export const HomeRouter = () => {
@@ -36,7 +37,8 @@ export const HomeRouter = () => {
         <Route path="/staff" element={<Staff />} />
         <Route path="/contacto" element={<ContactoPage />} />
         <Route path="/FAQ" element={<FAQPage />} />
-        {/* <Route path="/register" element={<RegisterPage />} /> */}
+        <Route path="/donadores" element={<DonatorPage />} />
+        <Route path="/register" element={<RegisterPage />} />
 
         {/* Rutas protegidas */}  
         <Route element={<PrivateRouter />}>
@@ -44,7 +46,6 @@ export const HomeRouter = () => {
         <Route path="/section/configuracion/panel" exact element={<AdministrationPage />} />
         <Route path="/section/configuracion/panel/publicaciones" exact element={<CreatePublication />} />
         <Route path="/section/configuracion/panel/eventos" exact element={<CreateGameEvents />} />
-        
         </Route>
 
       </Routes>

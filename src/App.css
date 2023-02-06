@@ -440,3 +440,11 @@ form {
 .headerStaff{
   background-color: #111315
 }
+
+.donatorLink{
+  color: yellow
+}
+.donatorLink:hover{
+ color: rgb(255, 255, 255);
+ cursor: pointer;
+}

@@ -5,39 +5,60 @@ import '../pages/login.css'
 export const LoginPage = () => {
   const [aincradLogo, setAincradLogo] = useState("./aincradlogo.png");
   const { user} = useAuth();
-  const [userLogged, setUserLogged] = useState({
-    email: "",
-    password: "",
-  });
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+  const [loading, setLoading] = useState(false)
+  // const [userLogged, setUserLogged] = useState({
+  //   email: "",
+  //   password: "",
+  // });
  
   const { login } = useAuth();
   const navigate = useNavigate();
   const [error, setError] = useState('');
 
-  const handleChange = ({ target: { name, value } }) =>
-    setUserLogged({ ...userLogged, [name]: value });
+  const handleChange = ({ target: { name, value } }) => setUserLogged({ ...userLogged, [name]: value });
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setError('')
-    try {
-      await login(userLogged.email, userLogged.password);
-      navigate("/");
-    } catch (error) {
-        if(error.code === "auth/internal-error"){
-            setError('Correo invalido')
-        }else if(error.code === "auth/email-already-in-use"){
-            setError('El correo ya se encuentra en uso')
-        
-        }else if(error.code === "auth/wrong-password"){
-            setError('La contraseña es incorrecta')
-        }else if(error.code === 'auth/invalid-email'){
-          setError('El email es invalido')
-        }else{
-            setError(error.message);
-        }
-      
+    try{
+      const config =  {
+        headers: {
+          "Content-type": "application/json",
+        },
+      };
+      setLoading(true)
+      const data = await axios.post("http://localhost:7169/api/users/login", {email, password}, 
+      config
+      );
+
+      console.log(data)
+      localStorage.setItem('userInfo', JSON.stringify(data))
+    }catch(err){
+      setError(error.response.data.message);
     }
+
+
+
+
+    // try {
+    //   await login(userLogged.email, userLogged.password);
+    //   navigate("/");
+    // } catch (error) {
+    //     if(error.code === "auth/internal-error"){
+    //         setError('Correo invalido')
+    //     }else if(error.code === "auth/email-already-in-use"){
+    //         setError('El correo ya se encuentra en uso')
+        
+    //     }else if(error.code === "auth/wrong-password"){
+    //         setError('La contraseña es incorrecta')
+    //     }else if(error.code === 'auth/invalid-email'){
+    //       setError('El email es invalido')
+    //     }else{
+    //         setError(error.message);
+    //     }
+      
+    // }
   };
 
   return (
@@ -50,7 +71,7 @@ export const LoginPage = () => {
 
         <div className="row">
         <div className="col-md-12 col-sm-12">
-        <form className="container text-light  " onSubmit={handleSubmit}>
+        <form className="container text-light" onSubmit={handleSubmit}>
           <label className=" form-label mb-3">Email</label> <span className="text-danger">*</span>
           <input
             type="email"
@@ -58,7 +79,7 @@ export const LoginPage = () => {
             name="email"
             className="form-control w-100 mb-3 border-success border-2"
             required
-            onChange={handleChange}
+            onChange={(e) => setEmail(e.target.value)}
             />
           <label className=" form-label mb-3">Contraseña</label> <span className="text-danger">*</span>
           <input
@@ -67,7 +88,7 @@ export const LoginPage = () => {
             name="password"
             className="form-control w-100 border-success border-2"
             required
-            onChange={handleChange}
+            onChange={(e) => setPassword(e.target.value)}
             />
             {error && <p className="alert alert-danger w-100 mt-2 text-center">{error}</p>}
             {user ? (<div className="alert alert-danger text-center w-100 my-3">Debe cerrar sesión primero</div>) : null}

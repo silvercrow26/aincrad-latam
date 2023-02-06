@@ -33,7 +33,6 @@ export const EditPublication = () => {
           _id: currentData._id,
         }
         );
-
         onResetForm(currentData);
         setEditing(false);
       if(res){

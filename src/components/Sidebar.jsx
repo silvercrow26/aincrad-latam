@@ -1,4 +1,5 @@
 import React, {useEffect} from 'react'
+import { Link } from "react-router-dom";
 import { useDocuments } from './hooks/useDocuments'
 
 export const Sidebar = () => {
@@ -8,13 +9,11 @@ export const Sidebar = () => {
     useEffect(() => {
         fetchEventData()
     }, [])
-
-
     return (
 
               <div className="col-md-3 col-sm-12"> 
               {
-             eventData.length === 1 ?  eventData.map(({titulo, fecha, hora, servidor}) => (
+             eventData.length === 1 ? eventData.map(({titulo, fecha, hora, servidor}) => (
                     <div className="rounded bg-dark backgroundCard">
                     <h6 className="text-center text-light mt-2"><span className="backgroundEvent">Evento Disponible!</span></h6>
                     <hr className="text-warning" />
@@ -28,14 +27,6 @@ export const Sidebar = () => {
                         <h6 className="text-center text-light mt-2 mb-2 mt-2"><span className="text-light">no hay eventos disponibles.</span></h6>
                        </div> 
                 )}
-
-           
-
-
-            
-                            
-
-            
 
 
           {/* Minecraft Card */}
@@ -60,6 +51,11 @@ export const Sidebar = () => {
            </div>
 
            {/* Discord card */}
+           <div className="mt-3">
+               <Link to="/donadores" className="text-decoration-none">
+               <p className="text-center mt-2 donatorLink">Nuestros Donadores ❤️ <span class="badge bg-warning">¡Click Aqui!</span></p>
+               </Link>
+           </div>
             <div className="mt-3">
            <iframe
                         className="dswidget"

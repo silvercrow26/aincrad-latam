@@ -40,7 +40,7 @@ export const DocsProvider = ({children}) =>  {
           })
       }  
 
-
+ 
       const getOnePublication = async(id) => {
         const res = await axios.get(`${URLpublicaciones}/${id}`)
         setPublicacionIndividual(res.data)
